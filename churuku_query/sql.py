@@ -4,7 +4,7 @@ import time
 import hashlib
 
 hostip = '127.0.0.1'
-key = '123123'
+key = '12345'
 ##hostip = '192.168.0.5'
 ##key = 'Zhtk_897919'
 
@@ -17,7 +17,7 @@ def test_print():
 
 
 ##添加材料信息
-def cailiao_add(cl_id,cl_name,cl_guige,cl_danwei):
+def cailiao_add(cl_id, cl_name, cl_guige, cl_danwei):
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
     cursor = db.cursor()
     sql_cl_add = "INSERT INTO cailiao VALUES('"+str(cl_id)+"','"+str(cl_name)+"','"+str(cl_guige)+"','"+str(cl_danwei)+"');"
