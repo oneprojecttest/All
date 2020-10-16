@@ -24,3 +24,7 @@
 
 ## 分工安排
 
+## 打包生成exe程序  
+
+1. 下载pyinstaller
+2. 在churuku_query的目录下允许命令pyinstaller -F -w show1.pyw, 会生成文件dist/show1.exe，点击直接允许。

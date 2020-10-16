@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['show1.pyw', '测试'],
+a = Analysis(['show1.pyw'],
              pathex=['C:\\Users\\mcdxw\\Desktop\\pro\\All\\churuku_query'],
              binaries=[],
              datas=[],
