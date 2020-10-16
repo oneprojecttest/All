@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['show1.pyw'],
-             pathex=['C:\\Users\\18915\\Desktop\\工厂\\进销存数据库\\churuku_query'],
+a = Analysis(['show1.pyw', '测试'],
+             pathex=['C:\\Users\\mcdxw\\Desktop\\pro\\All\\churuku_query'],
              binaries=[],
              datas=[],
              hiddenimports=[],
