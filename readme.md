@@ -28,3 +28,10 @@
 
 1. 下载pyinstaller
 2. 在churuku_query的目录下允许命令pyinstaller -F -w show1.pyw, 会生成文件dist/show1.exe，点击直接允许。
+
+-----------------------------------------------（分割线）
+## 作业2：完成项目前景和范围文档
+![image-20201021084216775](https://gitee.com/yunruowu/PictureForBolg/raw/master/img/image-20201021084216775.png)
+工具  
+[startUML下载](https://staruml.io/download)  
+[startUml使用](https://blog.csdn.net/csdn_20150804/article/details/105004375?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf)  

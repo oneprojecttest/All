@@ -131,3 +131,6 @@ code.ps1
 churuku_query/dist/*
 churuku_query/build/*
 churuku_query/__pycache__/*
+tool/startuml
+*.exe
+~*
