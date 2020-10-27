@@ -1,6 +1,7 @@
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtGui import QIcon,QFont
+from PyQt5.QtGui import QIcon, QFont
 from home1 import * 
 from PyQt5.QtCore import QObject , pyqtSignal
 from cailiao import *
@@ -26,66 +27,96 @@ from querytable_fuzeren import *
 from querytable_weifu import *
 from denglu import *
 
+
 class MyWindow0(QMainWindow, Ui_MainWindow0):
     def __init__(self, parent=None):
         super(MyWindow0, self).__init__(parent)
         self.setupUi(self)
+        
+
 class MyWindow1(QMainWindow, Ui_MainWindow1):
     def __init__(self, parent=None):
         super(MyWindow1, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow2(QMainWindow, Ui_MainWindow2):
     def __init__(self, parent=None):
         super(MyWindow2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow3(QMainWindow, Ui_MainWindow3):
     def __init__(self, parent=None):
         super(MyWindow3, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow4(QMainWindow, Ui_MainWindow4):
     def __init__(self, parent=None):
         super(MyWindow4, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow5(QMainWindow, Ui_MainWindow5):
     def __init__(self, parent=None):
         super(MyWindow5, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow6(QMainWindow, Ui_MainWindow6):
     def __init__(self, parent=None):
         super(MyWindow6, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow7(QMainWindow, Ui_MainWindow7):
     def __init__(self, parent=None):
         super(MyWindow7, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow1_2(QMainWindow, Ui_MainWindow1_2):
     def __init__(self, parent=None):
         super(MyWindow1_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow2_2(QMainWindow, Ui_MainWindow2_2):
     def __init__(self, parent=None):
         super(MyWindow2_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow4_2(QMainWindow, Ui_MainWindow4_2):
     def __init__(self, parent=None):
         super(MyWindow4_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow5_2(QMainWindow, Ui_MainWindow5_2):
     def __init__(self, parent=None):
         super(MyWindow5_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow6_2(QMainWindow, Ui_MainWindow6_2):
     def __init__(self, parent=None):
         super(MyWindow6_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow7_2(QMainWindow, Ui_MainWindow7_2):
     def __init__(self, parent=None):
         super(MyWindow7_2, self).__init__(parent)
         self.setupUi(self)
+
+
 class MyWindow_denglu(QMainWindow, Ui_MainWindow_denglu):
     def __init__(self, parent=None):
         super(MyWindow_denglu, self).__init__(parent)
         self.setupUi(self)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

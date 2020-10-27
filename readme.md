@@ -35,3 +35,10 @@
 工具  
 [startUML下载](https://staruml.io/download)  
 [startUml使用](https://blog.csdn.net/csdn_20150804/article/details/105004375?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf)  
+
+
+## 功能不足
+ 1. 备份
+ 2. 从excel录入 （czq）
+ 3. 显示刷新问题 （czq）
+ 4. 数据录入错误报错问题
