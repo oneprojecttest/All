@@ -1,5 +1,7 @@
 # GitHub合作开发原则
 
+## 一定不要把不能运行的代码直接提交到main里面
+
 ## GitHub Branch
 
 项目的分支结构入下：
@@ -17,6 +19,8 @@
     git clone --branch xyydev https://github.com/oneprojecttest/All.git
 
 ![image-20201029090106807](https://gitee.com/yunruowu/PictureForBolg/raw/master/img/image-20201029090106807.png)
+
+​		**关于直接下载分支，还是在原来的文件里面切换分支，可以自由选择，个人倾向于clone分支，可能比较方便，main分支的管理可以在网页端，或者ide这种地方管理**
 
 2. 下面的开发和平时无异， push，pull。
 
@@ -47,12 +51,17 @@
 
 ## 关于commit的规范
 
-尽量按照姓名+功能（你这次提交做了什么事情）
+1. 尽量按照第一行姓名+功能（你这次提交做了什么事情），第二行详细尽可能描述一下（在合并分支的时候详细最好，个人分支的提交可以简单点）
+2. 可以多次commit，但是合并到main分支的必须要保证代码可以运行，不然就不要请求主分支合并。
 
 ## 相关博客
 
-[GitHub分支创建及合并](https://blog.csdn.net/qq_30607843/article/details/84404000)
+1. [GitHub分支创建及合并](https://blog.csdn.net/qq_30607843/article/details/84404000)
 
-下面这个工具不同，但是原理是一样的
+2. [GitHub 多人队伍合作详细教程](https://blog.csdn.net/sculpta/article/details/104448310?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf)
 
-[超详细！Github团队协作教程（Gitkraken版）_weixin_30491641的博客-CSDN博客](https://blog.csdn.net/weixin_30491641/article/details/96532012?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf)
+3. 下面这个工具不同，但是原理是一样的
+
+    [超详细！Github团队协作教程（Gitkraken版）_weixin_30491641的博客-CSDN博客](https://blog.csdn.net/weixin_30491641/article/details/96532012?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.add_param_isCf)
+
+![image-20201029094538262](https://gitee.com/yunruowu/PictureForBolg/raw/master/img/image-20201029094538262.png)
