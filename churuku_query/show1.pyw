@@ -162,13 +162,15 @@ if __name__ == '__main__':
     cailiao_page.pushButton2.clicked.connect(cailiao_luru_page.handle_click)
     cailiao_page.pushButton3.clicked.connect(cailiao_page.handle_back)
     cailiao_luru_page.pushButton.clicked.connect(cailiao_luru_page.handle_luru)
-    cailiao_luru_page.pushButton2.clicked.connect(cailiao_luru_page.click_back)
+    cailiao_luru_page.pushButton2.clicked.connect(cailiao_luru_page.handle_excel_luru)
+    cailiao_luru_page.pushButton3.clicked.connect(cailiao_luru_page.click_back)
 
     gonghuodanwei_page.pushButton1.clicked.connect(gonghuodanwei_chaxun_page.handle_click)
     gonghuodanwei_page.pushButton2.clicked.connect(gonghuodanwei_luru_page.handle_click)
     gonghuodanwei_page.pushButton3.clicked.connect(gonghuodanwei_page.handle_back)
     gonghuodanwei_luru_page.pushButton.clicked.connect(gonghuodanwei_luru_page.handle_luru)
     gonghuodanwei_luru_page.pushButton2.clicked.connect(gonghuodanwei_luru_page.click_back)
+    gonghuodanwei_luru_page.pushButton3.clicked.connect(gonghuodanwei_luru_page.handle_excel_luru)
 
     kucun_page.pushButton1.clicked.connect(kuncun_chaxun_page.handle_click)
     kucun_page.pushButton3.clicked.connect(kucun_page.handle_back)
@@ -196,6 +198,7 @@ if __name__ == '__main__':
     fuzeren_page.pushButton3.clicked.connect(fuzeren_page.handle_back)
     fuzeren_luru_page.pushButton.clicked.connect(fuzeren_luru_page.handle_luru)
     fuzeren_luru_page.pushButton2.clicked.connect(fuzeren_luru_page.click_back)
+    fuzeren_luru_page.pushButton3.clicked.connect(fuzeren_luru_page.handle_excel_luru)
 
     denglu_page.show()
     sys.exit(app.exec_())
