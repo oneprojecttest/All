@@ -2,8 +2,7 @@ import pymysql
 from datetime import datetime
 import time
 import sys
-from sql import *
-
+from sql import * 
 if __name__ == '__main__':
     print('========================')
     print('||欢迎来到后台账号管理||')

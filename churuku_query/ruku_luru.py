@@ -5,13 +5,27 @@
 # Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
-
+import xlrd
+import pymysql
 from PyQt5 import QtCore, QtGui, QtWidgets
 from sql import *
 import PyQt5.QtWidgets as PQW
 import PyQt5.QtCore as PQC
 from PyQt5.QtCore import QDate,QDateTime,QTime
 import datetime
+
+def open_excel():
+       
+        try:
+            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\All-main\All-main\churuku_query\ruku_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            print("open excel file!")
+        except:
+            print("open excel file failed!")
+        try:
+            sheet = book.sheet_by_name('Sheet1')   #execl里面的worksheet1
+            return sheet
+        except:
+            print("locate worksheet in excel failed!")
 
 class Ui_MainWindow4_2(object):
     def setupUi(self, MainWindow):
