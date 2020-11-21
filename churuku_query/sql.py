@@ -20,10 +20,10 @@ def test_print():
 def cailiao_add(cl_id, cl_name, cl_guige, cl_danwei):
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
     cursor = db.cursor()
-    sql_cl_add = "INSERT INTO cailiao VALUES('"+str(cl_id)+"','"+str(cl_name)+"','"+str(cl_guige)+"','"+str(cl_danwei)+"');"
+    sql_cl_add = "INSERT IGNORE INTO cailiao VALUES('"+str(cl_id)+"','"+str(cl_name)+"','"+str(cl_guige)+"','"+str(cl_danwei)+"');"
     cursor.execute(sql_cl_add)
     ##库存增加此材料，数量设为0
-    sql_kc_add = "INSERT INTO kucun VALUES('"+str(cl_id)+"',0);"
+    sql_kc_add = "INSERT IGNORE INTO kucun VALUES('"+str(cl_id)+"',0);"
     cursor.execute(sql_kc_add)
     db.commit()
     db.close()
@@ -88,11 +88,11 @@ def kucun_query():
 def gonghuodanwei_add(ghdw_id,ghdw_name,ghdw_lianxiren,ghdw_dianhua,ghdw_dizhi,ghdw_isoid,ghdw_hege):
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
     cursor = db.cursor()
-    sql_ghdw_add = "INSERT INTO gonghuodanwei VALUES ('"+str(ghdw_id)+"','"+str(ghdw_name)+"','"+str(ghdw_lianxiren)\
+    sql_ghdw_add = "INSERT IGNORE INTO gonghuodanwei VALUES ('"+str(ghdw_id)+"','"+str(ghdw_name)+"','"+str(ghdw_lianxiren)\
                    +"','"+str(ghdw_dianhua)+"','"+str(ghdw_dizhi)+"','"+str(ghdw_isoid)+"','"+str(ghdw_hege)+"');"
     cursor.execute(sql_ghdw_add)
     ##未付增加此供货单位，金额设为0，已付设为0，未付设为0
-    sql_wf_add = "INSERT INTO weifu VALUES('"+str(ghdw_id)+"',0,0,0);"
+    sql_wf_add = "INSERT IGNORE INTO weifu VALUES('"+str(ghdw_id)+"',0,0,0);"
     cursor.execute(sql_wf_add)
     db.commit()
     db.close()
@@ -147,7 +147,7 @@ def gonghuodanwei_query():
 def fuzeren_add(fzr_name,fzr_dianhua):
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
     cursor = db.cursor()
-    sql_fzr_add = "INSERT INTO fuzeren VALUES('"+str(fzr_name)+"','"+str(fzr_dianhua)+"');"
+    sql_fzr_add = "INSERT IGNORE INTO fuzeren VALUES('"+str(fzr_name)+"','"+str(fzr_dianhua)+"');"
     cursor.execute(sql_fzr_add)
     db.commit()
     db.close()

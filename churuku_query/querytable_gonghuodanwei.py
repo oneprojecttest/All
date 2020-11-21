@@ -52,6 +52,10 @@ class TableWidgetContextMenu2_1(QWidget):
         data = gonghuodanwei_query()
         self.show_query(data)
 
+    def handle_flush(self):
+        data = gonghuodanwei_query()
+        self.show_query(data)
+
     def show_query(self,data):
         ##生成表格
         self.tableWidget.clearContents()
