@@ -52,7 +52,9 @@ class TableWidgetContextMenu1_1(QWidget):
     def show_table(self):
         data = cailiao_query()
         self.show_query(data)
-
+    def handle_flush(self):
+        data = cailiao_query()
+        self.show_query(data)    
     def show_query(self,data):
         ##生成表格
         self.tableWidget.clearContents()

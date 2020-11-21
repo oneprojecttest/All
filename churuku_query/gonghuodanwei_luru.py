@@ -6,12 +6,25 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
+import xlrd
+import pymysql
 from PyQt5 import QtCore, QtGui, QtWidgets
 from sql import *
 import PyQt5.QtWidgets as PQW
 import PyQt5.QtCore as PQC
 
+def open_excel():
+       
+        try:
+            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\czq_dev\All\churuku_query\gonghuodanwei_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            print("open excel file!")
+        except:
+            print("open excel file failed!")
+        try:
+            sheet = book.sheet_by_name('Sheet1')   #execl里面的worksheet1
+            return sheet
+        except:
+            print("locate worksheet in excel failed!")
 
 class Ui_MainWindow2_2(object):
     def setupUi(self, MainWindow):
@@ -39,14 +52,25 @@ class Ui_MainWindow2_2(object):
         font.setPointSize(15)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
+
         self.pushButton2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(30, 230, 93, 28))
+        self.pushButton2.setGeometry(QtCore.QRect(330, 230, 93, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.pushButton2.setFont(font)
         self.pushButton2.setObjectName("pushButton2")
+
+        self.pushButton3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton3.setGeometry(QtCore.QRect(30, 230, 200, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton3.setFont(font)
+        self.pushButton3.setObjectName("pushButton3")
+
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(200, 60, 51, 31))
         font = QtGui.QFont()
@@ -147,6 +171,21 @@ class Ui_MainWindow2_2(object):
                             self.comboBox.currentText())
                 reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)
 
+    def handle_excel_luru(self):
+        sheet = open_excel()
+        ####
+        for i in range(1, sheet.nrows): #第一行是标题名，对应表中的字段名所以应该从第二行开始，计算机以0开始计数，所以值是1
+ 
+            data0 = sheet.cell(i,0).value #取第i行第0列
+            data1 = sheet.cell(i,1).value#取第i行第1列，下面依次类推
+            data2 = sheet.cell(i,2).value
+            data3 = sheet.cell(i,3).value
+            data4 = sheet.cell(i,4).value 
+            data5 = sheet.cell(i,5).value
+            data6 = sheet.cell(i,6).value
+            
+            gonghuodanwei_add(data0,data1,data2,data3,data4,data5,data6)
+        reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)    
 
     ##本页的返回键事件
     def click_back(self):
@@ -165,6 +204,8 @@ class Ui_MainWindow2_2(object):
         self.pushButton.setText(_translate("MainWindow", "确认"))
         self.label_3.setText(_translate("MainWindow", "联系人"))
         self.pushButton2.setText(_translate("MainWindow", "返回"))
+        self.pushButton3.setText(_translate("MainWindow", "从excel导入"))
+
         self.label_2.setText(_translate("MainWindow", "名称"))
         self.label.setText(_translate("MainWindow", "编号"))
         self.label_5.setText(_translate("MainWindow", "供货单位信息录入"))

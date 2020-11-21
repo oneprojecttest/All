@@ -6,11 +6,25 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
+import xlrd
+import pymysql
 from PyQt5 import QtCore, QtGui, QtWidgets
 from sql import *
 import PyQt5.QtWidgets as PQW
 import PyQt5.QtCore as PQC
+
+def open_excel():
+       
+        try:
+            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\czq_dev\All\churuku_query\fuzeren_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            print("open excel file!")
+        except:
+            print("open excel file failed!")
+        try:
+            sheet = book.sheet_by_name('Sheet1')   #execl里面的worksheet1
+            return sheet
+        except:
+            print("locate worksheet in excel failed!")
 
 class Ui_MainWindow7_2(object):
     def setupUi(self, MainWindow):
@@ -48,15 +62,26 @@ class Ui_MainWindow7_2(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_5.setFont(font)
-        self.label_5.setObjectName("label_5")
+        self.label_5.setObjectName("label_5")\
+
         self.pushButton2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(24, 140, 93, 28))
+        self.pushButton2.setGeometry(QtCore.QRect(300, 140, 93, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.pushButton2.setFont(font)
         self.pushButton2.setObjectName("pushButton2")
+
+        self.pushButton3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton3.setGeometry(QtCore.QRect(24, 140, 200, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton3.setFont(font)
+        self.pushButton3.setObjectName("pushButton3")
+
         self.lineEdit2 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit2.setGeometry(QtCore.QRect(216, 100, 171, 24))
         self.lineEdit2.setObjectName("lineEdit2")
@@ -91,6 +116,17 @@ class Ui_MainWindow7_2(object):
                 fuzeren_add(self.lineEdit1.text(),self.lineEdit2.text())
                 reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)
 
+    def handle_excel_luru(self):
+        sheet = open_excel()
+        ####
+        for i in range(1, sheet.nrows): #第一行是标题名，对应表中的字段名所以应该从第二行开始，计算机以0开始计数，所以值是1
+ 
+            data0 = sheet.cell(i,0).value #取第i行第0列
+            data1 = sheet.cell(i,1).value#取第i行第1列，下面依次类推
+          
+
+            fuzeren_add(data0,data1)
+        reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)
 
     ##本页的返回键事件
     def click_back(self):
@@ -111,4 +147,6 @@ class Ui_MainWindow7_2(object):
         self.label.setText(_translate("MainWindow", "姓名"))
         self.label_5.setText(_translate("MainWindow", "负责人信息录入"))
         self.pushButton2.setText(_translate("MainWindow", "返回"))
+        self.pushButton3.setText(_translate("MainWindow", "从excel导入"))
+
         self.menu.setTitle(_translate("MainWindow", "录入"))
