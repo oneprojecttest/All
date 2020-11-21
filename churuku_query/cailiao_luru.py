@@ -16,7 +16,11 @@ from sql import *
 def open_excel():
        
         try:
+<<<<<<< HEAD
             book = xlrd.open_workbook(r'cailiao_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+=======
+            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\czq_dev\All\churuku_query\cailiao_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+>>>>>>> 5129fdd1228c3d65464ebcc2ab7c55b920781430
             print("open excel file!")
         except:
             print("open excel file failed!")
