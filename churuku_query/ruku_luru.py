@@ -17,7 +17,7 @@ import datetime
 def open_excel():
        
         try:
-            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\All-main\All-main\churuku_query\ruku_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            book = xlrd.open_workbook(r'ruku_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
             print("open excel file!")
         except:
             print("open excel file failed!")
