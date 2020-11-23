@@ -78,7 +78,7 @@ class Ui_MainWindow_denglu(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     signal1 = pyqtSignal()#####################定义一个信号，信号绑定写在 show1.py中
-
+    signal2 = pyqtSignal()
     def handle_back(self):
         if self.isVisible():
             self.hide()
@@ -89,19 +89,34 @@ class Ui_MainWindow_denglu(object):
         time_now = QDateTime.currentDateTime()
         time_now = time_now.toString('yyyy-MM-dd-HH-mm-ss')
         allyonghuming = []
+        allroot = []
         tmp = denglu_query_allyonghuming()
+        tmp_root = root_denglu_query_allyonghuming()
         for i in tmp:
             allyonghuming.append(str(i[0]))
+        for i in tmp_root:
+            allroot.append(str(i[0]))
         if a == '' or b == '':
             reply = PQW.QMessageBox.warning(self, '警告', "请不要有空输入", PQW.QMessageBox.Yes)
         else:
             ###不存在此用户
-            if a not in allyonghuming:
-                reply = PQW.QMessageBox.warning(self, '警告', "不存在此用户", PQW.QMessageBox.Yes)
-            else:
+            if a in allroot:
+                res_root = root_denglu_query_mima_by_yonghuming(a)[0][0]
+                if b == res_root:
+                    ##密码匹配，则直接登录Home1页面，并且使得当前页隐身，同时添加登录成功信息
+                    denglu_record_add(str(time_now), str(a), '成功')##添加登录成功信息
+                    self.hide()###登录页隐身
+                    self.signal2.emit()###发射信号，让home1不在隐身，信号绑定写在show1.py中                
+                else:
+                    print(get_md5(b))
+                    ##密码不匹配 弹出警告框，并且录入失败信息
+                    reply = PQW.QMessageBox.warning(self, '警告', "密码不正确", PQW.QMessageBox.Yes)
+                    denglu_record_add(str(time_now),str(a),'失败')
+
+            elif a in allyonghuming:
                 res = denglu_query_mima_by_yonghuming(a)[0][0]
                 if get_md5(b) == res:
-                    ##密码匹配，则直接登录Home1页面，并且使得当前页隐身，同时添加登录成功信息
+                 ##密码匹配，则直接登录Home1页面，并且使得当前页隐身，同时添加登录成功信息
                     denglu_record_add(str(time_now), str(a), '成功')##添加登录成功信息
                     self.hide()###登录页隐身
                     self.signal1.emit()###发射信号，让home1不在隐身，信号绑定写在show1.py中
@@ -110,6 +125,10 @@ class Ui_MainWindow_denglu(object):
                     ##密码不匹配 弹出警告框，并且录入失败信息
                     reply = PQW.QMessageBox.warning(self, '警告', "密码不正确", PQW.QMessageBox.Yes)
                     denglu_record_add(str(time_now),str(a),'失败')
+            elif a not in allyonghuming:
+                reply = PQW.QMessageBox.warning(self, '警告', "不存在此用户", PQW.QMessageBox.Yes)
+
+            
 
 
     def retranslateUi(self, MainWindow):

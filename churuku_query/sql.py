@@ -48,6 +48,14 @@ def cailiao_modify(cl_id,cl_name,cl_guige,cl_danwei):
     db.commit()
     db.close()
 
+def root_modify(cl_yonghuming,cl_mima):
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    sql_cl_rootmodify = "UPDATE root_denglu SET mima='"+str(cl_mima)+"' WHERE yonghuming='"+str(cl_yonghuming)+"';"
+    ##sql_ck_add = "UPDATE denglu SET mima = '" + str(mima) + "' WHERE yonghuming = '" + str(yonghu) + "';"
+    cursor.execute(sql_cl_rootmodify)##
+    db.commit()
+    db.close()
 ##查询材料信息(By id)
 ##输出结果元组:('zhtk0100100001', '树脂', 'guigeA', '斤')
 def cailiao_query_byid(cl_id):
@@ -71,6 +79,18 @@ def cailiao_query():
     db.commit()
     db.close()
     return data
+
+##查询root用户
+def root_query():
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    sql_root_query = "SELECT * FROM root_denglu;"
+    cursor.execute(sql_root_query)
+    data = cursor.fetchall()
+    db.commit()
+    db.close()
+    return data
+
 
 ##查询库存信息(全部)
 ##输出结果元组:(('zhtk0100100001',0), ('zhtk0100100002',0))
@@ -1567,6 +1587,16 @@ def denglu_query_mima_by_yonghuming(yonghuming):
     db.close()
     return data
 
+##找与root用户名匹配的密码，返回密文密码
+def root_denglu_query_mima_by_yonghuming(yonghuming):
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    sql_ck_querybyid = "SELECT mima FROM root_denglu WHERE yonghuming='"+str(yonghuming)+"';"
+    cursor.execute(sql_ck_querybyid)
+    data = cursor.fetchall()
+    db.commit()
+    db.close()
+    return data
 
 ##添加登录记录
 def denglu_record_add(denglu_time, denglu_yonghuming, denglu_statu):
@@ -1582,6 +1612,17 @@ def denglu_query_allyonghuming():
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
     cursor = db.cursor()
     sql_ck_querybyid = "SELECT yonghuming FROM denglu"
+    cursor.execute(sql_ck_querybyid)
+    data = cursor.fetchall()
+    db.commit()
+    db.close()
+    return data
+
+##查询所有root用户
+def root_denglu_query_allyonghuming():
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    sql_ck_querybyid = "SELECT yonghuming FROM root_denglu"
     cursor.execute(sql_ck_querybyid)
     data = cursor.fetchall()
     db.commit()
