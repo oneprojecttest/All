@@ -3,6 +3,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QIcon, QFont
 from home1 import * 
+from roothome1 import *
 from PyQt5.QtCore import QObject , pyqtSignal
 from cailiao import *
 from gonghuodanwei import *
@@ -32,7 +33,8 @@ class MyWindow0(QMainWindow, Ui_MainWindow0):
     def __init__(self, parent=None):
         super(MyWindow0, self).__init__(parent)
         self.setupUi(self)
-        
+
+     
 
 class MyWindow1(QMainWindow, Ui_MainWindow1):
     def __init__(self, parent=None):
@@ -121,6 +123,8 @@ class MyWindow_denglu(QMainWindow, Ui_MainWindow_denglu):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     home_page = MyWindow0()
+    root_home_page = TableWidgetContextMenu0()
+
     cailiao_page = MyWindow1()
     cailiao_chaxun_page = TableWidgetContextMenu1_1()
     cailiao_luru_page = MyWindow1_2()
@@ -148,6 +152,7 @@ if __name__ == '__main__':
 
     denglu_page.pushButton.clicked.connect(denglu_page.handle_denglu)
     denglu_page.signal1.connect(home_page.handle_click)
+    denglu_page.signal2.connect(root_home_page.handle_click)   ##root
 
     home_page.pushButton1.clicked.connect(cailiao_page.handle_click)
     home_page.pushButton2.clicked.connect(gonghuodanwei_page.handle_click)

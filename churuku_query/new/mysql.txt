@@ -86,6 +86,12 @@ CREATE TABLE `denglu`(
 PRIMARY KEY(`yonghuming`)
 );
 
+CREATE TABLE `root_denglu`(
+`yonghuming` varchar(20) NOT NULL,
+`mima` varchar(80) NOT NULL,
+PRIMARY KEY(`yonghuming`)
+);
+
 CREATE TABLE `denglu_record`(
 `time` datetime NOT NULL,
 `yonghuming` varchar(20) NOT NULL,
