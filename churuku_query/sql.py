@@ -29,13 +29,15 @@ def cailiao_add(cl_id, cl_name, cl_guige, cl_danwei):
     db.close()
     
 ####删除材料信息
-##def cailiao_remove(cl_id):
-##    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
-##    cursor = db.cursor()
-##    sql_cl_remove = "DELETE FROM cailiao WHERE id = '"+str(cl_id)+"';"
-##    cursor.execute(sql_cl_remove)
-##    db.commit()
-##    db.close()
+def cailiao_remove(cl_id):
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    
+    sql_cl_remove = "DELETE FROM cailiao WHERE id = '"+str(cl_id)+"';"
+    
+    cursor.execute(sql_cl_remove)
+    db.commit()
+    db.close()
 
 
 ##修改材料信息(By id)

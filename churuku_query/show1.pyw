@@ -2,9 +2,14 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QIcon, QFont
-from home1 import * 
-from roothome1 import *
 from PyQt5.QtCore import QObject , pyqtSignal
+#from home1 import * 
+
+from ui_navigate import *
+#from Ui_ui_root import *
+#from roothome1 import *
+from ui_root_querytable import *
+
 from cailiao import *
 from gonghuodanwei import *
 from kucun import *
@@ -12,21 +17,36 @@ from ruku import *
 from chuku import *
 from fuzhang import *
 from fuzeren import *
-from cailiao_luru import *
-from gonghuodanwei_luru import *
-from fuzeren_luru import *
-from chuku_luru import *
-from ruku_luru import *
-from fuzhang_luru import *
-from querytable_cailiao import *
-from querytable_gonghuodanwei import *
-from querytable_kucun import *
-from querytable_chuku import *
-from querytable_ruku import *
-from querytable_fuzhang import *
-from querytable_fuzeren import *
-from querytable_weifu import *
-from denglu import *
+#from cailiao_luru import *
+from ui_cailiao_luru import *
+#from gonghuodanwei_luru import *
+from ui_gonghuodanwei_luru import *
+#from fuzeren_luru import *
+from ui_fuze_luru import *
+#from chuku_luru import *
+from ui_chuku_luru import *
+#from ruku_luru import *
+from ui_ruku_luru import *
+#from fuzhang_luru import *
+from ui_fuzhang_luru import *
+#from querytable_cailiao import *
+from ui_querytable_cailiao import *
+#from querytable_gonghuodanwei import *
+from ui_querytable_gonghuodanwei import *
+#from querytable_kucun import *
+from ui_querytable_kucun import *
+#from querytable_chuku import *
+from ui_querytable_chuku import *
+#from querytable_ruku import *
+from ui_querytable_ruku import *
+#from querytable_fuzhang import *
+from ui_querytable_fuzhang import *
+#from querytable_fuzeren import *
+from ui_querytable_fuzeren import *
+#from querytable_weifu import *
+from ui_querytable_weifu import *
+##from denglu import *
+from ui_denglu import *
 
 
 class MyWindow0(QMainWindow, Ui_MainWindow0):
@@ -132,7 +152,7 @@ if __name__ == '__main__':
     gonghuodanwei_chaxun_page = TableWidgetContextMenu2_1()
     gonghuodanwei_luru_page = MyWindow2_2()
     kucun_page = MyWindow3()
-    kuncun_chaxun_page = TableWidgetContextMenu3_1()
+    kucun_chaxun_page = TableWidgetContextMenu3_1()
     ruku_page = MyWindow4()
     ruku_chaxun_page = TableWidgetContextMenu4_1()
     ruku_luru_page = MyWindow4_2()
@@ -154,62 +174,101 @@ if __name__ == '__main__':
     denglu_page.signal1.connect(home_page.handle_click)
     denglu_page.signal2.connect(root_home_page.handle_click)   ##root
 
-    home_page.pushButton1.clicked.connect(cailiao_page.handle_click)
-    home_page.pushButton2.clicked.connect(gonghuodanwei_page.handle_click)
-    home_page.pushButton3.clicked.connect(kucun_page.handle_click)
-    home_page.pushButton4.clicked.connect(ruku_page.handle_click)
-    home_page.pushButton5.clicked.connect(chuku_page.handle_click)
-    home_page.pushButton6.clicked.connect(fuzhang_page.handle_click)
-    home_page.pushButton7.clicked.connect(fuzeren_page.handle_click)
-    home_page.pushButton8.clicked.connect(weifuzhang_chaxun_page.handle_click)
+    #home_page.pushButton_6.clicked.connect(cailiao_page.handle_click)
+    home_page.pushButton.clicked.connect(cailiao_chaxun_page.handle_click)
+
+    cailiao_chaxun_page.pushButton_5.clicked.connect(cailiao_luru_page.handle_click)
+    cailiao_chaxun_page.pushButton_5.clicked.connect(cailiao_chaxun_page.handle_flush)
+    cailiao_chaxun_page.pushButton.clicked.connect(cailiao_chaxun_page.handle_flush)
+    #home_page.pushButton_7.clicked.connect(gonghuodanwei_page.handle_click)
+    home_page.pushButton_2.clicked.connect(gonghuodanwei_chaxun_page.handle_click)
+
+    gonghuodanwei_chaxun_page.pushButton_5.clicked.connect(gonghuodanwei_luru_page.handle_click)
+    gonghuodanwei_chaxun_page.pushButton_5.clicked.connect(gonghuodanwei_chaxun_page.handle_flush)
+    gonghuodanwei_chaxun_page.pushButton.clicked.connect(gonghuodanwei_chaxun_page.handle_flush)
+    #home_page.pushButton_8.clicked.connect(kucun_page.handle_click)
+    home_page.pushButton_3.clicked.connect(kucun_chaxun_page.handle_click)
+
+    kucun_chaxun_page.pushButton.clicked.connect(kucun_chaxun_page.handle_flush)
+    
+    #home_page.pushButton_9.clicked.connect(ruku_page.handle_click)
+    home_page.pushButton_4.clicked.connect(ruku_chaxun_page.handle_click)
+
+    ruku_chaxun_page.pushButton_5.clicked.connect(ruku_luru_page.handle_click)
+    ruku_chaxun_page.pushButton.clicked.connect(ruku_chaxun_page.handle_flush)
+    #home_page.pushButton_10.clicked.connect(chuku_page.handle_click)
+    home_page.pushButton_5.clicked.connect(chuku_chaxun_page.handle_click)
+
+    chuku_chaxun_page.pushButton_5.clicked.connect(chuku_luru_page.handle_click)
+    chuku_chaxun_page.pushButton_5.clicked.connect(chuku_chaxun_page.handle_flush)
+    chuku_chaxun_page.pushButton.clicked.connect(chuku_chaxun_page.handle_flush)
+
+    #home_page.pushButton_11.clicked.connect(fuzhang_page.handle_click)
+    home_page.pushButton_6.clicked.connect(fuzhang_chaxun_page.handle_click)
+
+    fuzhang_chaxun_page.pushButton_5.clicked.connect(fuzhang_luru_page.handle_click)
+    fuzhang_chaxun_page.pushButton.clicked.connect(fuzhang_chaxun_page.handle_flush)
+
+    home_page.pushButton_8.clicked.connect(fuzeren_chaxun_page.handle_click)
+
+    fuzeren_chaxun_page.pushButton_5.clicked.connect(fuzeren_luru_page.handle_click)
+    fuzeren_chaxun_page.pushButton.clicked.connect(fuzeren_chaxun_page.handle_flush)
+    ##
+    home_page.pushButton_7.clicked.connect(weifuzhang_chaxun_page.handle_click)
+    
+    weifuzhang_chaxun_page.pushButton.clicked.connect(weifuzhang_chaxun_page.handle_flush)
+    #home_page.pushButton_14.clicked.connect(weifuzhang_chaxun_page.handle__click)
 
     cailiao_page.pushButton1.clicked.connect(cailiao_chaxun_page.handle_click)
     cailiao_page.pushButton2.clicked.connect(cailiao_luru_page.handle_click)
     cailiao_page.pushButton3.clicked.connect(cailiao_page.handle_back)
-    cailiao_luru_page.pushButton.clicked.connect(cailiao_luru_page.handle_luru)
-    cailiao_luru_page.pushButton2.clicked.connect(cailiao_luru_page.handle_excel_luru)
-    cailiao_luru_page.pushButton2.clicked.connect(cailiao_chaxun_page.handle_click)
-    cailiao_luru_page.pushButton2.clicked.connect(cailiao_chaxun_page.handle_flush)
-    cailiao_luru_page.pushButton3.clicked.connect(cailiao_luru_page.click_back)
+
+    cailiao_luru_page.pushButton2.clicked.connect(cailiao_luru_page.handle_luru)
+    cailiao_luru_page.pushButton3.clicked.connect(cailiao_luru_page.handle_excel_luru)
+    cailiao_luru_page.pushButton3.clicked.connect(cailiao_chaxun_page.handle_click)
+    cailiao_luru_page.pushButton3.clicked.connect(cailiao_chaxun_page.handle_flush)
+    cailiao_luru_page.pushButton1.clicked.connect(cailiao_luru_page.click_back)
 
     gonghuodanwei_page.pushButton1.clicked.connect(gonghuodanwei_chaxun_page.handle_click)
     gonghuodanwei_page.pushButton2.clicked.connect(gonghuodanwei_luru_page.handle_click)
     gonghuodanwei_page.pushButton3.clicked.connect(gonghuodanwei_page.handle_back)
-    gonghuodanwei_luru_page.pushButton.clicked.connect(gonghuodanwei_luru_page.handle_luru)
-    gonghuodanwei_luru_page.pushButton2.clicked.connect(gonghuodanwei_luru_page.click_back)
-    gonghuodanwei_luru_page.pushButton3.clicked.connect(gonghuodanwei_luru_page.handle_excel_luru)
-    gonghuodanwei_luru_page.pushButton3.clicked.connect(gonghuodanwei_chaxun_page.handle_click)
-    gonghuodanwei_luru_page.pushButton3.clicked.connect(gonghuodanwei_chaxun_page.handle_flush)
+    gonghuodanwei_luru_page.pushButton1.clicked.connect(gonghuodanwei_luru_page.handle_luru)
+    gonghuodanwei_luru_page.pushButton.clicked.connect(gonghuodanwei_luru_page.click_back)
+    gonghuodanwei_luru_page.pushButton2.clicked.connect(gonghuodanwei_luru_page.handle_excel_luru)
+    gonghuodanwei_luru_page.pushButton2.clicked.connect(gonghuodanwei_chaxun_page.handle_click)
+    gonghuodanwei_luru_page.pushButton2.clicked.connect(gonghuodanwei_chaxun_page.handle_flush)
 
-    kucun_page.pushButton1.clicked.connect(kuncun_chaxun_page.handle_click)
+    kucun_page.pushButton1.clicked.connect(kucun_chaxun_page.handle_click)
     kucun_page.pushButton3.clicked.connect(kucun_page.handle_back)
 
     ruku_page.pushButton1.clicked.connect(ruku_chaxun_page.handle_click)
     ruku_page.pushButton2.clicked.connect(ruku_luru_page.handle_click)
     ruku_page.pushButton3.clicked.connect(ruku_page.handle_back)
-    ruku_luru_page.pushButton.clicked.connect(ruku_luru_page.handle_luru)
+    ruku_luru_page.pushButton1.clicked.connect(ruku_luru_page.handle_luru)
     ruku_luru_page.pushButton2.clicked.connect(ruku_luru_page.click_back)
 
     chuku_page.pushButton1.clicked.connect(chuku_chaxun_page.handle_click)
     chuku_page.pushButton2.clicked.connect(chuku_luru_page.handle_click)
     chuku_page.pushButton3.clicked.connect(chuku_page.handle_back)
-    chuku_luru_page.pushButton.clicked.connect(chuku_luru_page.handle_luru)
+    chuku_luru_page.pushButton1.clicked.connect(chuku_luru_page.handle_luru)
     chuku_luru_page.pushButton2.clicked.connect(chuku_luru_page.click_back)
 
     fuzhang_page.pushButton1.clicked.connect(fuzhang_chaxun_page.handle_click)
     fuzhang_page.pushButton2.clicked.connect(fuzhang_luru_page.handle_click)
     fuzhang_page.pushButton3.clicked.connect(fuzhang_page.handle_back)
-    fuzhang_luru_page.pushButton.clicked.connect(fuzhang_luru_page.handle_luru)
+    fuzhang_luru_page.pushButton1.clicked.connect(fuzhang_luru_page.handle_luru)
     fuzhang_luru_page.pushButton2.clicked.connect(fuzhang_luru_page.click_back)
 
     fuzeren_page.pushButton1.clicked.connect(fuzeren_chaxun_page.handle_click)
     fuzeren_page.pushButton2.clicked.connect(fuzeren_luru_page.handle_click)
     fuzeren_page.pushButton3.clicked.connect(fuzeren_page.handle_back)
-    fuzeren_luru_page.pushButton.clicked.connect(fuzeren_luru_page.handle_luru)
+    fuzeren_luru_page.pushButton1.clicked.connect(fuzeren_luru_page.handle_luru)
     fuzeren_luru_page.pushButton2.clicked.connect(fuzeren_luru_page.click_back)
     fuzeren_luru_page.pushButton3.clicked.connect(fuzeren_luru_page.handle_excel_luru)
     fuzeren_luru_page.pushButton3.clicked.connect(fuzeren_chaxun_page.handle_click)
     fuzeren_luru_page.pushButton3.clicked.connect(fuzeren_chaxun_page.handle_flush)
 
     denglu_page.show()
+
+
     sys.exit(app.exec_())
