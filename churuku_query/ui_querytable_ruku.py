@@ -21,11 +21,11 @@ class TableWidgetContextMenu4_1(QWidget):
 
     def initUI(self):
        
-        self.setObjectName("入库记录查询")
-        self.resize(877, 437)
+        self.setObjectName("Form")
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['入库单号', '日期', '材料编号','材料名称','数量','单价','总金额','负责人','负责人电话','供货单位编号','供货单位名称','联系人','联系人电话','地址']
+        self.labels=['入库单号', '日期', '材料编号','材料名称','数量','单价','总金额','负责人','负责人电话','供货单位编号','供货单位名称','联系人','联系人电话','地址','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -150,7 +150,7 @@ class TableWidgetContextMenu4_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "入库"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

@@ -21,10 +21,11 @@ class TableWidgetContextMenu0(QWidget):
 
     def initUI(self):
         self.setObjectName("Form")
-        self.resize(877, 437)
+        #self.resize(877, 437)
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['材料编号','名称','规格','单位']
+        self.labels=['用户名','密码','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -53,6 +54,9 @@ class TableWidgetContextMenu0(QWidget):
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.tableWidget.setHorizontalHeaderItem(5, item)
         
+        
+           
+
         item = QtWidgets.QTableWidgetItem()
 
         self.tableWidget.setItem(1,5,item)
@@ -96,6 +100,8 @@ class TableWidgetContextMenu0(QWidget):
         self.tableWidget.setItem(3, 0, item)
         '''
         #self.tableWidget.horizontalHeader().setVisible(False)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        
         self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.horizontalHeader().setStyleSheet("color:rgba(255,255,235,100);")
         self.tableWidget.horizontalHeader().setStyleSheet("background-color:rgba(206,206,206,100);")
@@ -149,7 +155,7 @@ class TableWidgetContextMenu0(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "用户管理"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)
@@ -195,10 +201,10 @@ class TableWidgetContextMenu0(QWidget):
 
 
     def show_table(self):
-        data = root_query()
+        data =  user_query()
         self.show_query(data)
     def handle_flush(self):
-        data = root_query()
+        data =  user_query()
         self.show_query(data)    
     def show_query(self,data):
         ##生成表格
@@ -221,7 +227,11 @@ class TableWidgetContextMenu0(QWidget):
         if not self.isVisible():
             self.show()
 
-
+    def handle_delete(self,id):
+        yonghu_mima_delete(id)
+        data =  user_query()
+        self.show_query(data)
+        
     def buttonForRow(self,id):
         widget=QWidget()
         # 修改
@@ -252,8 +262,8 @@ class TableWidgetContextMenu0(QWidget):
                                      height : 30px;
                                      border-style: outset;
                                      font : 13px; ''')
-        #deleteBtn.clicked.connect(self.handle_delete(id))
- 
+        
+        deleteBtn.clicked.connect(lambda:self.handle_delete(id))
         hLayout = QHBoxLayout()
         #hLayout.addWidget(updateBtn)
         #hLayout.addWidget(viewBtn)

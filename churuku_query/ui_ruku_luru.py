@@ -10,9 +10,9 @@ import datetime
 class Ui_MainWindow4_2(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1000, 800)
+        Form.setFixedSize(1000, 800)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+"border-image:url(churuku_query/new/table-1.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"
@@ -396,7 +396,7 @@ class Ui_MainWindow4_2(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "入库录入"))
         self.label.setText(_translate("Form", "入库单号"))
         self.label_2.setText(_translate("Form", "日       期"))
         self.label_8.setText(_translate("Form", "材       料"))

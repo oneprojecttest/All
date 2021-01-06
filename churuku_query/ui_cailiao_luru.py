@@ -21,13 +21,14 @@ def open_excel():
 class Ui_MainWindow1_2(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(600, 480)
+        #Form.resize(600, 480)
+        Form.setFixedSize(600,480)
         font = QtGui.QFont()
         font.setFamily("Adobe Arabic")
         font.setPointSize(10)
         Form.setFont(font)
         Form.setStyleSheet("QWidget {\n"
-            "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+            "border-image:url(churuku_query/new/table-1.jpg);\n"
             "}\n"
             "\n"
             "#下面的防止背景干扰其他控件\n"
@@ -166,12 +167,17 @@ class Ui_MainWindow1_2(object):
             "}")
         self.lineEdit4.setObjectName("lineEdit4")
 
+        self.lineEdit1.setClearButtonEnabled(True)
+        self.lineEdit1.setClearButtonEnabled(True)
+        self.lineEdit1.setClearButtonEnabled(True)
+        self.lineEdit1.setClearButtonEnabled(True)
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "材料录入"))
         self.pushButton2.setText(_translate("Form", "确认"))
         self.pushButton3.setText(_translate("Form", "从Excel导入"))
         self.pushButton1.setText(_translate("Form", "返回"))
@@ -199,6 +205,10 @@ class Ui_MainWindow1_2(object):
             else:
                 cailiao_add(self.lineEdit1.text(),self.lineEdit2.text(),self.lineEdit3.text(),self.lineEdit4.text())
                 reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)
+                self.lineEdit1.clear()
+                self.lineEdit2.clear()
+                self.lineEdit3.clear()
+                self.lineEdit4.clear()
 
     
 

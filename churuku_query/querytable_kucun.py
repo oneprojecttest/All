@@ -21,7 +21,8 @@ class TableWidgetContextMenu3_1(QWidget):
     def initUI(self):
         self.setWindowTitle("库存查询")
         self.labels=['材料编号','名称','规格','单位','数量']
-        self.resize(600, 750);
+        self.resize(600, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

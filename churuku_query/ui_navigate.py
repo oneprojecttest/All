@@ -9,7 +9,7 @@ class Ui_MainWindow0(object):
         Form.setObjectName("Form")
         Form.resize(1000, 400)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/1-2.jpg);\n"
+"border-image:url(churuku_query/new/1-2.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"
@@ -142,9 +142,9 @@ class Ui_MainWindow0(object):
                        
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "供货单位"))
-        self.pushButton_2.setText(_translate("Form", "材料"))
+        Form.setWindowTitle(_translate("Form", "管理界面"))
+        self.pushButton.setText(_translate("Form", "材料"))
+        self.pushButton_2.setText(_translate("Form", "供货单位"))
         self.pushButton_3.setText(_translate("Form", "库存"))
         self.pushButton_4.setText(_translate("Form", "入库"))
         self.pushButton_5.setText(_translate("Form", "出库"))

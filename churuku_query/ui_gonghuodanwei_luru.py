@@ -21,13 +21,13 @@ def open_excel():
 class Ui_MainWindow2_2(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(750, 647)
+        Form.setFixedSize(750, 647)
         font = QtGui.QFont()
         font.setFamily("Adobe Arabic")
         font.setPointSize(10)
         Form.setFont(font)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+"border-image:url(churuku_query/new/table-1.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"
@@ -216,6 +216,13 @@ class Ui_MainWindow2_2(object):
 "}")
         self.pushButton.setObjectName("pushButton")
         self.comboBox.setObjectName("comboBox")
+
+        self.lineEdit1.setClearButtonEnabled(True)
+        self.lineEdit2.setClearButtonEnabled(True)
+        self.lineEdit3.setClearButtonEnabled(True)
+        self.lineEdit4.setClearButtonEnabled(True)
+        self.lineEdit5.setClearButtonEnabled(True)
+        self.lineEdit6.setClearButtonEnabled(True)
         ##初始化下拉栏
         self.comboBox.addItem('是')
         self.comboBox.addItem('否')
@@ -224,7 +231,7 @@ class Ui_MainWindow2_2(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "供货单位录入"))
         self.pushButton1.setText(_translate("Form", "确认"))
         self.pushButton2.setText(_translate("Form", "从Excel导入"))
         self.pushButton.setText(_translate("Form", "返回"))
@@ -258,6 +265,12 @@ class Ui_MainWindow2_2(object):
                             self.lineEdit4.text(),self.lineEdit5.text(),self.lineEdit6.text(), \
                             self.comboBox.currentText())
                 reply = PQW.QMessageBox.warning(self, '提示', "录入成功", PQW.QMessageBox.Yes)
+                self.lineEdit1.clear()
+                self.lineEdit2.clear()
+                self.lineEdit3.clear()
+                self.lineEdit4.clear()
+                self.lineEdit5.clear()
+                self.lineEdit6.clear()
 
     def handle_excel_luru(self):
         sheet = open_excel()
