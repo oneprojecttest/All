@@ -12,6 +12,20 @@ $(document).ready(function () {
         //     }, 5000);
         // }
     })
+    $("#jump").click(function () {
+        // $.post('/websocket', function (data, status) {
+            // $('#jump').on('click', function() {
+                // alert("te");     q
+                location.href = "/main";
+            // })
+        // })
+        // if (websocketnum == 0) {
+        //     // web();
+        //     setInterval(() => {
+        //         web();
+        //     }, 5000);
+        // }
+    })
     $("#deluser").click(function () {
         $.post('/deluser', function (data, status) {
             console.log("sss");

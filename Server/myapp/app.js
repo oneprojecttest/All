@@ -21,7 +21,7 @@ var conntoDB = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
   password: '12345',
-  database: 'churuku'
+  database: 'test'
 });
 conntoDB.connect();
 
@@ -59,6 +59,32 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// sql查询
+function sqlQuery(sqlstring, db) {
+  var sqldata,data;
+  var sql = sqlstring;
+  sql = "SELECT * FROM test.username_tab";
+  //查
+  //查
+  console.log(xyy);
+
+  // alert("te");
+  
+  db.query(sql, function (err, result) {
+    if (err) {
+      console.log('[SELECT ERROR] - ', err.message);
+      return;
+    }
+    data = result;
+    sqldata = result;
+    console.log(data);
+  });
+  return data;
+}
+
+
+
+
 
 //ws模块
 var ws = require('ws'); // 加载ws模块;
@@ -72,17 +98,34 @@ wsServer.on("connection", on_server_client_comming);
 
 function on_server_client_comming(wsObj) {
   console.log("request comming");
+  
   websocket_add_listener(wsObj);
+  // wsObj.send("test_s/end");
 }
+//ws发送数据给client
+function sendtoc(wsObj) {
+  console.log("sss");
+  var nowDate = new Date().getTime();
+  // chart(num);
+  console.log("发送")
+  // ws.send("sdsd")
+  // wsServer.on("connection", function on_server_client_comming(wsObj) {
+  //   console.log("sdss", sqldata)
+  var send_data = sqlQuery("sq",conntoDB);
+  console.log((send_data))
+  // var decc = new TextEncoder()
+  wsObj.send((String(send_data)));
+  // });
+  // websocket_add_listener(wsObj);
 
-
-// 各事件处理逻辑
+}
+// ws接收各事件处理逻辑
 function websocket_add_listener(wsObj) {
   console.log("receive");
   //通信
   wsObj.on("message", function (data) {
     if (data == 'chart') {
-      // sendtoc();
+      sendtoc(wsObj);
       console.log("chart");
     }
     if (data == 'one') {

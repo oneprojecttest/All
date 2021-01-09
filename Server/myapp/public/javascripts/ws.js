@@ -1,35 +1,37 @@
 if ("WebSocket" in window) {
-    alert("您的浏览器支持 WebSocket!");
+    // alert("您的浏览器支持 WebSocket!");
 }
 var wsObj = new WebSocket("ws://127.0.0.1:8082");
 var cpu ;
 var mem;
 wsObj.onmessage = function (ev) { //获取后端响应
     console.log("sssssssssssssssssss");
-    sdata = JSON.parse(ev.data)
+    // sdata = JSON.parse(ev.data)
+    console.log(ev);
     // clearcontent();
     // show(sdata);
-    // console.log(sdata);
+    var decc = new TextDecoder("utf-8");
+    console.log((JSON.parse(ev.data)));
 
-    var jslength = 0;
-    for (var js2 in sdata) {
-        // console.log(sdata)
-        jslength++;
-    }
-    // console.log("sdsdsd", sdata);
+    // var jslength = 0;
+    // for (var js2 in sdata) {
+    //     // console.log(sdata)
+    //     jslength++;
+    // }
+    // // console.log("sdsdsd", sdata);
 
-    //  console.log("sdd",sdata[0])
-    for (var i = 0; i < jslength; i++) {
-        // console.log(sdata[i])
-        if (sdata[i].Funname == 'cpu') {
-            cpu= sdata[i].Val+10;
+    // //  console.log("sdd",sdata[0])
+    // for (var i = 0; i < jslength; i++) {
+    //     // console.log(sdata[i])
+    //     if (sdata[i].Funname == 'cpu') {
+    //         cpu= sdata[i].Val+10;
             
-        }
-        if (sdata[i].Funname == 'mempercent') {
-            mem = sdata[i].Val;
+    //     }
+    //     if (sdata[i].Funname == 'mempercent') {
+    //         mem = sdata[i].Val;
             
-        }
-    }
+    //     }
+    // }
     
 };
 
@@ -95,7 +97,7 @@ function connect(){
 function close(){
     console.log("close");
     wsObj.onclose = function (ev) { //发送请求
-        alert("open");
+        // alert("open");
         // wsObj.send('chart');
     };
 }
