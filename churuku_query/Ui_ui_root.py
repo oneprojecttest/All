@@ -34,7 +34,7 @@ class TableWidgetContextMenu0(QWidget):
         def setupUi(self):
         
                 self.setObjectName("Dialog")
-                self.resize(646, 414)
+                self.setFixedSize(646, 414)
                 self.setStyleSheet("QWidget {\n"
                 "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);\n"
                 "}\n"

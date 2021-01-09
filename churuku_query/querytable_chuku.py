@@ -22,7 +22,8 @@ class TableWidgetContextMenu5_1(QWidget):
     def initUI(self):
         self.setWindowTitle("出库记录查询")
         self.labels=['出库单号', '日期', '材料编号','材料名称','数量','负责人','负责人电话','用途']
-        self.resize(900, 750);
+        self.resize(900, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

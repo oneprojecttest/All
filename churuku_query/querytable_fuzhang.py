@@ -23,7 +23,8 @@ class TableWidgetContextMenu6_1(QWidget):
     def initUI(self):
         self.setWindowTitle("付账记录查询")
         self.labels=['付账单号', '日期', '供货单位编号','供货单位名称','联系人','联系人电话','已付金额','付款方式']
-        self.resize(1100, 750);
+        self.resize(1100, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

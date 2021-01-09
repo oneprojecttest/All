@@ -22,7 +22,8 @@ class TableWidgetContextMenu2_1(QWidget):
     def initUI(self):
         self.setWindowTitle("供货单位查询")
         self.labels=['供货单位编号', '名称', '联系人','联系人电话','地址','质量认证编号','是否合格供应商']
-        self.resize(1200, 750);
+        self.resize(1200, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

@@ -27,7 +27,7 @@ import os
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(646, 420)
+        Dialog.setFixedSize(646, 420)
         Dialog.setStyleSheet("QWidget {\n"
             "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);\n"
             "}\n"

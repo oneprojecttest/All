@@ -22,11 +22,11 @@ class TableWidgetContextMenu6_1(QWidget):
 
     def initUI(self):
        
-        self.setObjectName("付账记录查询")
-        self.resize(877, 437)
+        self.setObjectName("Form")
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['付账单号', '日期', '供货单位编号','供货单位名称','联系人','联系人电话','已付金额','付款方式']
+        self.labels=['付账单号', '日期', '供货单位编号','供货单位名称','联系人','联系人电话','已付金额','付款方式','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -151,7 +151,7 @@ class TableWidgetContextMenu6_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "付账"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

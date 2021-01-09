@@ -21,9 +21,10 @@ def open_excel():
 class Ui_MainWindow7_2(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(650, 520)
+        #Form.resize(650, 520)
+        Form.setFixedSize(650, 520)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+"border-image:url(churuku_query/new/table-1.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"
@@ -154,7 +155,7 @@ class Ui_MainWindow7_2(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "负责人录入"))
         self.label_2.setText(_translate("Form", "姓       名"))
         self.label_3.setText(_translate("Form", "电       话"))
         self.label_4.setText(_translate("Form", "备       注"))
