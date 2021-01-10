@@ -12,7 +12,7 @@ class Ui_MainWindow4_2(object):
         Form.setObjectName("Form")
         Form.resize(1000, 800)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+"border-image:url(new/table-1.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"

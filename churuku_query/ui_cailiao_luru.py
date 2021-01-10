@@ -8,7 +8,7 @@ from sql import *
 def open_excel():
        
         try:
-            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\czq_dev\All\churuku_query\cailiao_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            book = xlrd.open_workbook(r'cailiao_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
             print("open excel file!")
         except:
             print("open excel file failed!")
@@ -27,7 +27,7 @@ class Ui_MainWindow1_2(object):
         font.setPointSize(10)
         Form.setFont(font)
         Form.setStyleSheet("QWidget {\n"
-            "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/table-1.jpg);\n"
+            "border-image:url(new/table-1.jpg);\n"
             "}\n"
             "\n"
             "#下面的防止背景干扰其他控件\n"
