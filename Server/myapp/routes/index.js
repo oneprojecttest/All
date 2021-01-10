@@ -20,7 +20,6 @@ var Sql_op = {
 function sqlQuery(sqlstring, para, tag) {
     return new Promise((resolve, reject) => {
         console.log(tag);
-
         if (tag == 1) {
             pool.getConnection(function (err, connection) {
                 connection.query(sqlstring, para, function (err, result) {
@@ -100,10 +99,6 @@ router.get('/main', function (req, res) {
     console.log('mian');
     res.render('ws');
 });
-async function getdata(sql, arrayObj) {
-    var tttt = await sqlQuery(sql, arrayObj);
-    return tttt;
-}
 //  register post
 
 async function deal_post_register(req, res) {}
@@ -161,7 +156,6 @@ router.post('/register', function (req, res) {
 router.post('/login', function (req, res) {
     var username = req.body.username;
     var pwd = req.body.password;
-    var pwdhash = null;
     var sql = 'SELECT * FROM test.username_tab where username=?';
     // console.log(sql);
     var arrayObj = new Array();
@@ -187,7 +181,7 @@ router.post('/login', function (req, res) {
                             console.log('to main');
                             res.render('main');
                         } else {
-                            res.render('/password_error');
+                            res.render('password_error');
                             console.log('password error!  登录');
                         }
                     })
