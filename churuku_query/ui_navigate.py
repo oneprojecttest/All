@@ -9,11 +9,7 @@ class Ui_MainWindow0(object):
         Form.setObjectName("Form")
         Form.resize(1000, 400)
         Form.setStyleSheet("QWidget {\n"
-<<<<<<< HEAD
 "border-image:url(new/1-2.jpg);\n"
-=======
-"border-image:url(churuku_query/new/1-2.jpg);\n"
->>>>>>> 484f1a5239b85ddf5428d64503589d5d67e9292d
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"
