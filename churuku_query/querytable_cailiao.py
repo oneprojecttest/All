@@ -23,7 +23,8 @@ class TableWidgetContextMenu1_1(QWidget):
     def initUI(self):
         self.setWindowTitle("材料查询")
         self.labels=['材料编号','名称','规格','单位']
-        self.resize(500, 750);
+        self.resize(500, 750)
+        
         layout = QHBoxLayout()
         self.tableWidget = QTableWidget()
         layout = QVBoxLayout()

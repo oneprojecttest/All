@@ -29,13 +29,15 @@ def cailiao_add(cl_id, cl_name, cl_guige, cl_danwei):
     db.close()
     
 ####删除材料信息
-##def cailiao_remove(cl_id):
-##    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
-##    cursor = db.cursor()
-##    sql_cl_remove = "DELETE FROM cailiao WHERE id = '"+str(cl_id)+"';"
-##    cursor.execute(sql_cl_remove)
-##    db.commit()
-##    db.close()
+def cailiao_remove(cl_id):
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    
+    sql_cl_remove = "DELETE FROM cailiao WHERE id = '"+str(cl_id)+"';"
+    
+    cursor.execute(sql_cl_remove)
+    db.commit()
+    db.close()
 
 
 ##修改材料信息(By id)
@@ -79,7 +81,16 @@ def cailiao_query():
     db.commit()
     db.close()
     return data
-
+##查询用户
+def user_query():
+    db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
+    cursor = db.cursor()
+    sql_user_query = "SELECT * FROM denglu;"
+    cursor.execute(sql_user_query)
+    data = cursor.fetchall()
+    db.commit()
+    db.close()
+    return data
 ##查询root用户
 def root_query():
     db = pymysql.connect(host=hostip, port=3306, user='root', passwd=key, db='churuku', charset='utf8')
@@ -90,6 +101,7 @@ def root_query():
     db.commit()
     db.close()
     return data
+##删除用户
 
 
 ##查询库存信息(全部)
@@ -1628,6 +1640,7 @@ def root_denglu_query_allyonghuming():
     db.commit()
     db.close()
     return data
+##查询所有用户
 
 def get_md5(s):
     md5_obj = hashlib.md5()

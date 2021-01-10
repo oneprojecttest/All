@@ -21,6 +21,7 @@ class TableWidgetContextMenu4_1(QWidget):
         self.setWindowTitle("入库记录查询")
         self.labels=['入库单号', '日期', '材料编号','材料名称','数量','单价','总金额','负责人','负责人电话','供货单位编号','供货单位名称','联系人','联系人电话','地址']
         self.resize(1200, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

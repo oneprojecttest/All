@@ -21,7 +21,7 @@ class TableWidgetContextMenu7_1(QWidget):
     def initUI(self):
         self.setWindowTitle("负责人查询")
         self.labels=['负责人名称', '电话']
-        self.resize(300, 750);
+        self.resize(300, 750)
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)

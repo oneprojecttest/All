@@ -22,7 +22,8 @@ class TableWidgetContextMenu8_1(QWidget):
     def initUI(self):
         self.setWindowTitle("未付金额查询")
         self.labels=['供货单位编号', '名称', '联系人','联系人电话','总金额','已付金额','未付金额']
-        self.resize(1000, 750);
+        self.resize(1000, 750)
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)
@@ -45,6 +46,7 @@ class TableWidgetContextMenu8_1(QWidget):
         ##禁止修改
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.setLayout(layout)
+       
         
     def show_table(self):
         data = weifu_query()
@@ -64,6 +66,7 @@ class TableWidgetContextMenu8_1(QWidget):
                 for j in range(4,7):
                     newItem = QTableWidgetItem(str(item[j-3]))
                     self.tableWidget.setItem(i, j, newItem)
+                
         else:
             self.tableWidget.setRowCount(1)
             newItem = QTableWidgetItem("未找到")

@@ -20,6 +20,23 @@ class Ui_MainWindow_denglu(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(496, 275)
+        MainWindow.setStyleSheet("QWidget {
+            "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);\n"
+            "}\n"
+            "#下面的防止背景干扰其他控件\n"
+
+            "QLineEdit {\n"
+                "border-image:url();\n"
+            "}\n"
+            "QLabel {\n"
+                "border-image:url();\n"
+            "}\n"
+            "QMessageBox {\n"
+                "border-image:url();\n"
+            "}\n"            
+            "QPushButton {\n"
+                "border-image:url();\n"
+            "}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)

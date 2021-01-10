@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import (QMenu, QPushButton, QWidget, QTableWidget, QVBoxLay
 from PyQt5.QtCore import QObject, Qt, QDir
 from PyQt5.QtGui import *
 from sql import *
+from PyQt5 import QtCore, QtGui, QtWidgets
 from DateDialog import DateDialog
 from DoubleDateDialog import DoubleDateDialog
 import os
@@ -21,11 +22,44 @@ class TableWidgetContextMenu0(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("管理员")
-        self.labels=['用户名','密码']
-        self.resize(500, 750);
+        self.setObjectName("Dialog")
+        self.resize(646, 420)
+        self.labels=['负责人名称', '电话']
+        self.setStyleSheet("QWidget {\n"
+"border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);\n"
+"}\n"
+"\n"
+"#下面的防止背景干扰其他控件\n"
+"QTextBrowser {\n"
+"border-image:url();\n"
+"}\n"
+"QLineEdit {\n"
+"border-image:url();\n"
+"}\n"
+"QComboBox {\n"
+"border-image:url();\n"
+"}\n"
+"QLabel {\n"
+"border-image:url();\n"
+"}\n"
+"QPushButton {\n"
+"border-image:url();\n"
+"}\n"
+"HorizontalHeaderLabels {\n"
+"border-image:url();\n"
+"}\n"
+"HorizontalHeaderLabels {\n"
+"border-image:url();\n"
+"}\n"
+"\n"
+"")
+       
+       
         layout = QHBoxLayout()
-        self.tableWidget = QTableWidget()
+        self.tableWidget = QtWidgets.QTableWidget()
+        self.tableWidget.setGeometry(QtCore.QRect(40, 30, 531, 271))
+        self.tableWidget.setObjectName("tableWidget")
+        
         layout = QVBoxLayout()
         layout_H = QHBoxLayout()
         self.btn0 = QPushButton('刷新',self)
@@ -42,6 +76,8 @@ class TableWidgetContextMenu0(QWidget):
         ##设置目录
         self.tableWidget.setColumnCount(2)
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.show_table()
         self.tableWidget.setColumnWidth(0,150)
         ##禁止修改
