@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<title>登录界面</title>
+<body background="images/jun5.jpg" style="background-size: 100%; background-repeat: no-repeat" ;>
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css" />
+    <p align="center">
+        <span
+            style="
+                font-size: 70pt;
+                color: rgba(0, 128, 0, 1);
+                line-height: 150%;
+                font-family: 华文行楷;
+            "
+        >
+            <b>被装精确申领平台</b>
+        </span>
+    </p>
+
+    <form action="http://127.0.0.1:3000/login" method="post" onsubmit="return check()">
+        <div style="text-align: center; margin-top: 90px">
+            <div>
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="text"
+                    placeholder="请输入用户名"
+                    id="name"
+                    name="username"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="password"
+                    placeholder="请输入密码"
+                    name="password"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input type="submit" class="btn" value=" 登录" />
+            </div>
+
+            <div style="margin-top: 10px">
+                <span
+                    style="
+                        font-size: 30pt;
+                        color: #0099cc;
+                        line-height: 100%;
+                        font-family: 华文行楷;
+                    "
+                >
+                    你还没有账号？点
+                    <a href="http://localhost:3000/register2">这里</a>
+                    去注册吧！
+                </span>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        function check() {
+            if (
+                document.getElementById('name').value == null ||
+                document.getElementById('name').value == ''
+            ) {
+                alert('用户名不能为空');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
