@@ -408,3 +408,4 @@ compile_commands.json
 
 Server/cly/*
 Server/web
+Server/web/*
