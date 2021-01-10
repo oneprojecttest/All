@@ -23,7 +23,11 @@ class Ui_MainWindow_denglu(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(819, 483)
         Dialog.setStyleSheet("QWidget {\n"
+<<<<<<< HEAD
                 "border-image:url(new/1-2.jpg);\n"
+=======
+                "border-image:url(churuku_query/new/1-2.jpg);\n"
+>>>>>>> 484f1a5239b85ddf5428d64503589d5d67e9292d
             "}\n"
 
             "#下面的防止背景干扰其他控件\n"
@@ -63,6 +67,7 @@ class Ui_MainWindow_denglu(object):
             "color:#000000;\n"
         "}")
         self.lineEdit_2.setText("")
+        
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(Dialog)
         self.lineEdit_3.setGeometry(QtCore.QRect(270, 170, 301, 41))
@@ -132,6 +137,11 @@ class Ui_MainWindow_denglu(object):
             "color:#ffffff;\n"
         "}")
         self.label_2.setObjectName("label_2")
+
+        self.lineEdit_2.setClearButtonEnabled(True)
+        self.lineEdit_3.setClearButtonEnabled(True)
+        self.lineEdit_2.setEchoMode(QLineEdit.Password)
+        self.lineEdit_2.returnPressed.connect(self.handle_denglu)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)

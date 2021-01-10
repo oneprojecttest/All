@@ -22,11 +22,11 @@ class TableWidgetContextMenu7_1(QWidget):
 
     def initUI(self):
        
-        self.setObjectName("负责人查询")
-        self.resize(877, 437)
+        self.setObjectName("Form")
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['负责人名称', '电话']
+        self.labels=['负责人名称', '电话','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -143,6 +143,7 @@ class TableWidgetContextMenu7_1(QWidget):
         self.tableWidget.raise_()
 
         self.verticalLayoutWidget.raise_()
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         self.show_table()
 
@@ -151,7 +152,7 @@ class TableWidgetContextMenu7_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "负责人查询"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

@@ -20,11 +20,11 @@ class TableWidgetContextMenu2_1(QWidget):
 
     def setupUi(self):
        
-        self.setObjectName("供货单位查询")
-        self.resize(877, 437)
+        self.setObjectName("Form")
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['供货单位编号', '名称', '联系人','联系人电话','地址','质量认证编号','是否合格供应商']
+        self.labels=['供货单位编号', '名称', '联系人','联系人电话','地址','质量认证编号','是否合格供应商','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -149,7 +149,7 @@ class TableWidgetContextMenu2_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "供货单位查询"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

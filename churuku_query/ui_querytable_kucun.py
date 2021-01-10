@@ -22,11 +22,11 @@ class TableWidgetContextMenu3_1(QWidget):
 
     def setupUi(self):
        
-        self.setObjectName("库存查询")
-        self.resize(877, 437)
+        self.setObjectName("Form")
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['材料编号','名称','规格','单位','数量']
+        self.labels=['材料编号','名称','规格','单位','数量','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -119,16 +119,16 @@ class TableWidgetContextMenu3_1(QWidget):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.pushButton_5 = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("微软雅黑")
-        self.pushButton_5.setFont(font)
-        self.pushButton_5.setStyleSheet("QPushButton{\n"
-            "background-color:rgba(206,206,206,200);\n"
-            "color:#ffffff;\n"
-            "}")
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.verticalLayout.addWidget(self.pushButton_5)
+        #self.pushButton_5 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        #font = QtGui.QFont()
+        #font.setFamily("微软雅黑")
+        #self.pushButton_5.setFont(font)
+        #self.pushButton_5.setStyleSheet("QPushButton{\n"
+        #    "background-color:rgba(206,206,206,200);\n"
+        #    "color:#ffffff;\n"
+        #    "}")
+        #self.pushButton_5.setObjectName("pushButton_5")
+        #self.verticalLayout.addWidget(self.pushButton_5)
         self.pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -151,7 +151,7 @@ class TableWidgetContextMenu3_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "库存"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)
@@ -192,7 +192,7 @@ class TableWidgetContextMenu3_1(QWidget):
 
         
         self.tableWidget.setSortingEnabled(__sortingEnabled)
-        self.pushButton_5.setText(_translate("Form", "插入"))
+        #self.pushButton_5.setText(_translate("Form", "插入"))
         self.pushButton.setText(_translate("Form", "刷新"))
 
 

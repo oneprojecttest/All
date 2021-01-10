@@ -23,10 +23,10 @@ class TableWidgetContextMenu5_1(QWidget):
     def initUI(self):
        
         self.setObjectName("出库记录查询")
-        self.resize(877, 437)
+        self.setFixedSize(877, 437)
         self.setStyleSheet("")
 
-        self.labels=['出库单号', '日期', '材料编号','材料名称','数量','负责人','负责人电话','用途']
+        self.labels=['出库单号', '日期', '材料编号','材料名称','数量','负责人','负责人电话','用途','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -151,7 +151,7 @@ class TableWidgetContextMenu5_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "出库"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

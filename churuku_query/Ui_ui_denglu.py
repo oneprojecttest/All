@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(819, 483)
+        Dialog.setFixedSize(819, 483)
         Dialog.setStyleSheet("QWidget {\n"
 "border-image:url(/new/登录背景.jpg);\n"
 "}\n"

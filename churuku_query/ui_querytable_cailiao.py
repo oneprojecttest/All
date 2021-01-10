@@ -21,10 +21,11 @@ class TableWidgetContextMenu1_1(QWidget):
     def setupUi(self):
        
         self.setObjectName("Form")
-        self.resize(877, 437)
+        #self.resize(877, 437)
+        self.setFixedSize(877,437)
         self.setStyleSheet("")
 
-        self.labels=['材料编号','名称','规格','单位']
+        self.labels=['材料编号','名称','规格','单位','操作']
 
 
         self.tableWidget = QtWidgets.QTableWidget(self)
@@ -101,6 +102,7 @@ class TableWidgetContextMenu1_1(QWidget):
         self.tableWidget.horizontalHeader().setStyleSheet("background-color:rgba(206,206,206,100);")
 
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         self.tableView = QtWidgets.QTableView(self)
         self.tableView.setGeometry(QtCore.QRect(0, -10, 881, 461))
@@ -141,6 +143,7 @@ class TableWidgetContextMenu1_1(QWidget):
         self.tableWidget.raise_()
 
         self.verticalLayoutWidget.raise_()
+        
 
         self.show_table()
 
@@ -149,7 +152,7 @@ class TableWidgetContextMenu1_1(QWidget):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "材料"))
         
         '''
         item = self.tableWidget.verticalHeaderItem(0)

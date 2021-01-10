@@ -10,6 +10,7 @@ from ui_navigate import *
 #from roothome1 import *
 from ui_root_querytable import *
 
+from ui_user_luru import *
 from cailiao import *
 from gonghuodanwei import *
 from kucun import *
@@ -52,6 +53,10 @@ from ui_denglu import *
 class MyWindow0(QMainWindow, Ui_MainWindow0):
     def __init__(self, parent=None):
         super(MyWindow0, self).__init__(parent)
+        self.setupUi(self)
+class MyWindow0_1(QMainWindow, Ui_MainWindow0_1):
+    def __init__(self, parent=None):
+        super(MyWindow0_1, self).__init__(parent)
         self.setupUi(self)
 
      
@@ -144,6 +149,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     home_page = MyWindow0()
     root_home_page = TableWidgetContextMenu0()
+    root_user_luru_page = MyWindow0_1()
 
     cailiao_page = MyWindow1()
     cailiao_chaxun_page = TableWidgetContextMenu1_1()
@@ -174,6 +180,11 @@ if __name__ == '__main__':
     denglu_page.signal1.connect(home_page.handle_click)
     denglu_page.signal2.connect(root_home_page.handle_click)   ##root
 
+    root_home_page.pushButton_5.clicked.connect(root_user_luru_page.handle_click)
+    root_home_page.pushButton.clicked.connect(root_home_page.handle_flush)
+    root_user_luru_page.pushButton1.clicked.connect(root_user_luru_page.handle_luru)
+    root_user_luru_page.pushButton1.clicked.connect(root_home_page.handle_flush)
+    root_user_luru_page.pushButton2.clicked.connect(root_user_luru_page.click_back)
     #home_page.pushButton_6.clicked.connect(cailiao_page.handle_click)
     home_page.pushButton.clicked.connect(cailiao_chaxun_page.handle_click)
 
