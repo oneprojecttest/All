@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>登录界面</title>
+<title>注册界面</title>
 <body background="images/jun5.jpg" style="background-size: 100%; background-repeat: no-repeat" ;>
     <link rel="stylesheet" type="text/css" href="stylesheet/style.css" />
     <p align="center">
@@ -15,8 +15,8 @@
         </span>
     </p>
 
-    <form action="http://127.0.0.1:3000/login" method="post" onsubmit="return check()">
-        <div style="text-align: center; margin-top: 90px">
+    <form action="http://127.0.0.1:3000/register" method="post" onsubmit="return check()">
+        <div style="text-align: center; margin-top: 40px">
             <div>
                 <input
                     class="inputs"
@@ -34,12 +34,24 @@
                     style="border-radius: 100px"
                     type="password"
                     placeholder="请输入密码"
+                    id="password"
                     name="password"
                 />
             </div>
 
             <div style="margin-top: 10px">
-                <input type="submit" class="btn" value=" 登录" />
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="password"
+                    placeholder="请确认密码"
+                    id="password_check"
+                    name="password2"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input type="submit" class="btn" value="注册" />
             </div>
 
             <div style="margin-top: 10px">
@@ -51,15 +63,22 @@
                         font-family: 华文行楷;
                     "
                 >
-                    你还没有账号？点
-                    <a href="http://localhost:3000/register2">这里</a>
-                    去注册吧！
+                    你有账号了？点
+                    <a href="http://localhost:3000/login">这里</a>
+                    去登录吧！
                 </span>
             </div>
         </div>
     </form>
     <script type="text/javascript">
         function check() {
+            if (
+                document.getElementById('password').value !=
+                document.getElementById('password_check').value
+            ) {
+                alert('两次密码不一致');
+                return false;
+            }
             if (
                 document.getElementById('name').value == null ||
                 document.getElementById('name').value == ''

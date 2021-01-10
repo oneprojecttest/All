@@ -93,7 +93,7 @@ var wsServer = new ws.Server({
   host: ip_addr,
   port: 8082,
 });
-console.log('WebSocket sever is listening at port localhost:8181');
+console.log('WebSocket sever is listening at port localhost:8082');
 wsServer.on("connection", on_server_client_comming);
 
 function on_server_client_comming(wsObj) {
@@ -178,6 +178,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+console.log("dsds")
 var xyy = 0;
 // var server = app.listen(3000, "127.0.0.1");
 module.exports = app;
+console.log("dsds")

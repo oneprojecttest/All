@@ -1,9 +1,10 @@
 var xyy = 99;
 $(document).ready(function () {
-    $("#rer").click(function () {
+    $('#rer').click(function () {
         // $.post('/websocket', function (data, status) {
-            console.log("web");
-            alert("te");
+        console.log('web');
+        location.href = '/login';
+        alert('te');
         // })
         // if (websocketnum == 0) {
         //     // web();
@@ -11,13 +12,13 @@ $(document).ready(function () {
         //         web();
         //     }, 5000);
         // }
-    })
-    $("#jump").click(function () {
+    });
+    $('#jump').click(function () {
         // $.post('/websocket', function (data, status) {
-            // $('#jump').on('click', function() {
-                // alert("te");     q
-                location.href = "/main";
-            // })
+        // $('#jump').on('click', function() {
+        // alert("te");     q
+        location.href = '/main';
+        // })
         // })
         // if (websocketnum == 0) {
         //     // web();
@@ -25,29 +26,26 @@ $(document).ready(function () {
         //         web();
         //     }, 5000);
         // }
-    })
-    $("#deluser").click(function () {
+    });
+    $('#deluser').click(function () {
         $.post('/deluser', function (data, status) {
-            console.log("sss");
+            console.log('sss');
             // alert(data);
-
-        })
-    })
-    $("#update").click(function () {
+        });
+    });
+    $('#update').click(function () {
         $.post('/update', function (data, status) {
-            console.log("sss");
+            console.log('sss');
             // alert(data);
-
-        })
-    })
-    $("#xin").click(function () {
+        });
+    });
+    $('#xin').click(function () {
         $.post('/xin', function (data, status) {
-            console.log("sss");
+            console.log('sss');
             // alert(data);
+        });
+    });
 
-        })
-    })
-    
     // $("#check").click(function(){
     //     $.post(
     //         '/check',
@@ -58,4 +56,4 @@ $(document).ready(function () {
     //         }
     //     )
     // })
-})
+});
