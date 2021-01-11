@@ -41,7 +41,7 @@ border-image:url();
    </property>
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>270</x>
      <y>60</y>
      <width>151</width>
      <height>121</height>
@@ -56,9 +56,10 @@ border-image:url();
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>供货单位</string>
@@ -70,7 +71,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>80</x>
      <y>60</y>
      <width>151</width>
      <height>121</height>
@@ -85,9 +86,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>材料</string>
@@ -99,7 +101,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>460</x>
      <y>60</y>
      <width>151</width>
      <height>121</height>
@@ -114,9 +116,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>库存</string>
@@ -128,7 +131,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>650</x>
      <y>60</y>
      <width>151</width>
      <height>121</height>
@@ -143,9 +146,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>入库</string>
@@ -157,7 +161,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>80</x>
      <y>210</y>
      <width>151</width>
      <height>121</height>
@@ -172,9 +176,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>出库</string>
@@ -186,7 +191,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>270</x>
      <y>210</y>
      <width>151</width>
      <height>121</height>
@@ -201,9 +206,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>付账</string>
@@ -215,7 +221,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>460</x>
      <y>210</y>
      <width>151</width>
      <height>121</height>
@@ -230,9 +236,10 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>未付</string>
@@ -244,7 +251,7 @@ color:#ffffff;
    </property>
    <property name="geometry">
     <rect>
-     <x>700</x>
+     <x>650</x>
      <y>210</y>
      <width>151</width>
      <height>121</height>
@@ -259,12 +266,42 @@ color:#ffffff;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(255, 245, 221,160);
+    <string notr="true">QPushButton{background-color:rgba(255, 245, 221,160);
 color:#ffffff;
-</string>
+}
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
    </property>
    <property name="text">
     <string>负责人</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_9">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>20</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+border-radius:20px;/*圆角弧度(为正方形边长一半时就是圆形)*/
+background-color:rgba(255, 245, 221,160);/*背景色*/
+color:#ffffff;
+}
+
+QPushButton:hover{/*鼠标悬停*/background-color:rgba(255,255,255,100);}QPushButton:pressed{/*鼠标按下*/background-color:rgba(255,255,255,200);}</string>
+   </property>
+   <property name="text">
+    <string>注销</string>
    </property>
   </widget>
  </widget>
