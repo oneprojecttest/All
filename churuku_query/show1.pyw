@@ -230,6 +230,9 @@ if __name__ == '__main__':
     weifuzhang_chaxun_page.pushButton.clicked.connect(weifuzhang_chaxun_page.handle_flush)
     #home_page.pushButton_14.clicked.connect(weifuzhang_chaxun_page.handle__click)
 
+    home_page.pushButton_9.clicked.connect(home_page.click_back)
+    home_page.pushButton_9.clicked.connect(denglu_page.handle_click)
+    
     cailiao_page.pushButton1.clicked.connect(cailiao_chaxun_page.handle_click)
     cailiao_page.pushButton2.clicked.connect(cailiao_luru_page.handle_click)
     cailiao_page.pushButton3.clicked.connect(cailiao_page.handle_back)
@@ -283,3 +286,5 @@ if __name__ == '__main__':
 
 
     sys.exit(app.exec_())
+
+
