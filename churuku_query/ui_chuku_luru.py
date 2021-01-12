@@ -255,9 +255,11 @@ class Ui_MainWindow5_2(object):
         self.comboBox2.activated.connect(self.selectionchange2)
 
         firstdata2 = fuzeren_query_allname()
+
         firstdata_str2 = []
         for i in firstdata2:
             firstdata_str2.append(i[0])
+            print("hello")
         self.comboBox3.addItems(firstdata_str2)
         self.comboBox3.activated.connect(self.selectionchange3)
 

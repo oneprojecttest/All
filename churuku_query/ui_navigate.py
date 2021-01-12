@@ -7,7 +7,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow0(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1000, 400)
+        #Form.resize(1000, 400)
+        Form.setFixedSize(1000,400)
         Form.setStyleSheet("QWidget {\n"
 "border-image:url(new/1-2.jpg);\n"
 "}\n"

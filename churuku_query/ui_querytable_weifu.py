@@ -23,7 +23,32 @@ class TableWidgetContextMenu8_1(QWidget):
        
         self.setObjectName("Form")
         self.setFixedSize(877, 437)
-        self.setStyleSheet("")
+        self.setStyleSheet("QWidget {\n"
+"border-image:url(new/table-1.jpg);\n"
+"}\n"
+"\n"
+"#下面的防止背景干扰其他控件\n"
+"QTextBrowser {\n"
+"border-image:url();\n"
+"}\n"
+"QLineEdit {\n"
+"border-image:url();\n"
+"}\n"
+"QComboBox {\n"
+"border-image:url();\n"
+"}\n"
+"QLabel {\n"
+"border-image:url();\n"
+"}\n"
+"QPushButton {\n"
+"border-image:url();\n"
+"}\n"
+"QCheckBox {\n"
+"border-image:url();\n"
+"}\n"
+"QDateEdit{\n"
+"border-image:url();\n"
+"}")
 
         self.labels=['供货单位编号', '名称', '联系人','联系人电话','总金额','已付金额','未付金额','操作']
 

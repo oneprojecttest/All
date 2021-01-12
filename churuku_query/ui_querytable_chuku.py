@@ -104,6 +104,7 @@ class TableWidgetContextMenu5_1(QWidget):
 
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
 
+
         self.tableView = QtWidgets.QTableView(self)
         self.tableView.setGeometry(QtCore.QRect(0, -10, 881, 461))
         self.tableView.setStyleSheet("QTableView {\n"
