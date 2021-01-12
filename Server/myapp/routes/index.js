@@ -1,4 +1,5 @@
 var express = require('express');
+var crypto = require('crypto');
 var router = express.Router();
 var mysql = require('mysql');
 var pool = mysql.createPool({
@@ -115,7 +116,7 @@ router.post('/register', function (req, res) {
     console.log(sql);
     var arrayObj = new Array();
     arrayObj[0] = username;
-    arrayObj[1] = pwd;
+    arrayObj[1] = crypto.createHash('md5').update(pwd).digest("hex");
     // console.log(sql);
     console.log(username);
     var data;
@@ -173,7 +174,7 @@ router.post('/login', function (req, res) {
                 // console.log(sql);
                 // var arrayObj = new Array();
                 arrayObj[0] = username;
-                arrayObj[1] = pwd;
+                arrayObj[1] = crypto.createHash('md5').update(pwd).digest("hex");
                 tag = Sql_op.select;
                 sqlQuery(sql, arrayObj, tag)
                     .then(function onFulfilled(data) {
