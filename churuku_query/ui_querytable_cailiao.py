@@ -10,6 +10,7 @@ from PyQt5.QtGui import *
 from sql import *
 from DateDialog import DateDialog
 from DoubleDateDialog import DoubleDateDialog
+from cailiao_predict import *
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -334,15 +335,15 @@ class TableWidgetContextMenu1_1(QWidget):
         widget=QWidget()
         # 修改
         
-        #updateBtn = QPushButton('修改')
-        #updateBtn.setStyleSheet(''' text-align : center;
-        #                                    background-color : NavajoWhite;
-        #                                    height : 30px;
-        #                                    border-style: outset;
-        #                                   font : 13px  ''')
+        updateBtn = QPushButton('预测')
+        updateBtn.setStyleSheet(''' text-align : center;
+                                            background-color : NavajoWhite;
+                                            height : 30px;
+                                            border-style: outset;
+                                           font : 13px  ''')
  
 
-        #updateBtn.clicked.connect()
+        updateBtn.clicked.connect(cailiao_pre)
          # 查看
         #viewBtn = QPushButton('查看')
         #viewBtn.setStyleSheet(''' text-align : center;
@@ -363,7 +364,7 @@ class TableWidgetContextMenu1_1(QWidget):
         #deleteBtn.clicked.connect(self.handle_delete(id))
  
         hLayout = QHBoxLayout()
-        #hLayout.addWidget(updateBtn)
+        hLayout.addWidget(updateBtn)
         #hLayout.addWidget(viewBtn)
         hLayout.addWidget(deleteBtn)
         hLayout.setContentsMargins(5,2,5,2)

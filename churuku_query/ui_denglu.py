@@ -155,9 +155,13 @@ class Ui_MainWindow_denglu(object):
 
     signal1 = pyqtSignal()#####################定义一个信号，信号绑定写在 show1.py中
     signal2 = pyqtSignal()
+    
     def handle_back(self):
         if self.isVisible():
             self.hide()
+    def handle_click(self):
+        if not self.isVisible():
+                self.show()
 
     def handle_denglu(self):
         a = self.lineEdit_3.text()
