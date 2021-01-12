@@ -16,7 +16,7 @@ import PyQt5.QtCore as PQC
 def open_excel():
        
         try:
-            book = xlrd.open_workbook(r'C:\Users\CZQ\Desktop\czq_dev\All\churuku_query\fuzeren_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
+            book = xlrd.open_workbook(r'fuzeren_luru.xlsx')  #文件名，把文件与py文件放在同一目录下
             print("open excel file!")
         except:
             print("open excel file failed!")

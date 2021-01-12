@@ -10,7 +10,7 @@ class Ui_MainWindow6_2(object):
         Form.setObjectName("Form")
         Form.setFixedSize(800, 640)
         Form.setStyleSheet("QWidget {\n"
-"border-image:url(churuku_query/new/table-1.jpg);\n"
+"border-image:url(new/table-1.jpg);\n"
 "}\n"
 "\n"
 "#下面的防止背景干扰其他控件\n"

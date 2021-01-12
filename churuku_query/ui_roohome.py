@@ -29,7 +29,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.setFixedSize(646, 420)
         Dialog.setStyleSheet("QWidget {\n"
-            "border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);\n"
+            "border-image:url(new/登录背景.jpg);\n"
             "}\n"
             "\n"
             "#下面的防止背景干扰其他控件\n"

@@ -23,8 +23,10 @@
 4. churuku_query 项目的代码目录
 
 ## 分工安排  
+
 陈志强 添加导入Excel表格  
 韩建臣 机器学习部分
+
 ## 打包生成exe程序  
 
 1. 下载pyinstaller
@@ -36,11 +38,31 @@
 工具  
 [startUML下载](https://staruml.io/download)  
 [startUml使用](https://blog.csdn.net/csdn_20150804/article/details/105004375?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf)  
+**分工**
+   * 第一章 陈一凡
+   * 第二章 陈志强
+   * 第三章 韩建臣
+   * 第四章 曹立源
+   * 汇总 &emsp;许云洋
 
+## 作业2：[软件需求规格说明文档](https://www.trustie.net/student_work?homework=12117#student_work_660108)
+
+**要求**：各组按照需求规格说明的结构和要求完成文档，相关的用例图、顺序图等需求模型都要放到文档中，不要单独提交模型文件。
+**截止时间**：2020-11-24 19:00
 
 ## 功能不足
+<<<<<<< HEAD
  1. 备份
  2. 从excel录入 （czq）
  3. 显示刷新问题 （czq）
  4. 数据录入错误报错问题
  5. 管理员界面
+  6. 删除数据
+  7. excel 检查重复数据，自定义文件位置（自行选择文件）
+   8. 移动加web端
+=======
+
+- [x] 备份
+- [x] 从excel录入
+- [ ] 美化UI
+- [ ] 数据录入报错问题

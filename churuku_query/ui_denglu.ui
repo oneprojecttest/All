@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-border-image:url(C:/Users/CZQ/Desktop/czq_dev/All/churuku_query/new/登录背景.jpg);
+border-image:url(new/登录背景.jpg);
 }
 
 #下面的防止背景干扰其他控件

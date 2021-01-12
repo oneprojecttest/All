@@ -23,7 +23,11 @@ class Ui_MainWindow_denglu(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(819, 483)
         Dialog.setStyleSheet("QWidget {\n"
+<<<<<<< HEAD
+                "border-image:url(new/1-2.jpg);\n"
+=======
                 "border-image:url(churuku_query/new/1-2.jpg);\n"
+>>>>>>> 484f1a5239b85ddf5428d64503589d5d67e9292d
             "}\n"
 
             "#下面的防止背景干扰其他控件\n"

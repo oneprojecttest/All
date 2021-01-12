@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<title>注册界面</title>
+<body background="images/jun5.jpg" style="background-size: 100%; background-repeat: no-repeat" ;>
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css" />
+    <p align="center">
+        <span
+            style="
+                font-size: 70pt;
+                color: rgba(0, 128, 0, 1);
+                line-height: 150%;
+                font-family: 华文行楷;
+            "
+        >
+            <b>被装精确申领平台</b>
+        </span>
+    </p>
+
+    <form action="http://127.0.0.1:3000/register" method="post" onsubmit="return check()">
+        <div style="text-align: center; margin-top: 40px">
+            <div>
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="text"
+                    placeholder="请输入用户名"
+                    id="name"
+                    name="username"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="password"
+                    placeholder="请输入密码"
+                    id="password"
+                    name="password"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input
+                    class="inputs"
+                    style="border-radius: 100px"
+                    type="password"
+                    placeholder="请确认密码"
+                    id="password_check"
+                    name="password2"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <input type="submit" class="btn" value="注册" />
+            </div>
+
+            <div style="margin-top: 10px">
+                <span
+                    style="
+                        font-size: 30pt;
+                        color: #0099cc;
+                        line-height: 100%;
+                        font-family: 华文行楷;
+                    "
+                >
+                    你有账号了？点
+                    <a href="http://localhost:3000/login">这里</a>
+                    去登录吧！
+                </span>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        function check() {
+            if (
+                document.getElementById('password').value !=
+                document.getElementById('password_check').value
+            ) {
+                alert('两次密码不一致');
+                return false;
+            }
+            if (
+                document.getElementById('name').value == null ||
+                document.getElementById('name').value == ''
+            ) {
+                alert('用户名不能为空');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
