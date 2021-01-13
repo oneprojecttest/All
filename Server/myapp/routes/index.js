@@ -1,5 +1,9 @@
 var express = require('express');
 var crypto = require('crypto');
+var createError = require('http-errors');
+var shopRouter = require('./shop');
+var express = require('express');
+var path = require('path');
 var router = express.Router();
 var mysql = require('mysql');
 var pool = mysql.createPool({
@@ -100,6 +104,10 @@ router.get('/main', function (req, res) {
     console.log('mian');
     res.render('ws');
 });
+router.post('/main', function (req, res) {
+    console.log('mian');
+    res.render('ws');
+});
 //  register post
 
 async function deal_post_register(req, res) {}
@@ -116,7 +124,7 @@ router.post('/register', function (req, res) {
     console.log(sql);
     var arrayObj = new Array();
     arrayObj[0] = username;
-    arrayObj[1] = crypto.createHash('md5').update(pwd).digest("hex");
+    arrayObj[1] = crypto.createHash('md5').update(pwd).digest('hex');
     // console.log(sql);
     console.log(username);
     var data;
@@ -153,6 +161,9 @@ router.post('/register', function (req, res) {
     // db.close();
 });
 
+
+
+
 //表单提交，注册信息
 router.post('/login', function (req, res) {
     var username = req.body.username;
@@ -174,7 +185,7 @@ router.post('/login', function (req, res) {
                 // console.log(sql);
                 // var arrayObj = new Array();
                 arrayObj[0] = username;
-                arrayObj[1] = crypto.createHash('md5').update(pwd).digest("hex");
+                arrayObj[1] = crypto.createHash('md5').update(pwd).digest('hex');
                 tag = Sql_op.select;
                 sqlQuery(sql, arrayObj, tag)
                     .then(function onFulfilled(data) {
@@ -196,10 +207,32 @@ router.post('/login', function (req, res) {
         });
 });
 
+
+//跳转到购物界面
+router.use('/shop', shopRouter)
+
+// router.get('/shop', function (req, res) {
+//     console.log('shop');
+//     res.render(shopRouter);
+// });
 //get main paper
 router.get('/register2', function (req, res) {
     console.log('register2');
     res.render('register2');
+});
+router.post('/send', function (req, res) {
+    console.log(req.body.name);
+    console.log(req.body.city);
+    console.log(req.body);
+    
+    // res.send("dsds")
+});
+router.get('/gett', function (req, res) {
+    // console.log(req.body.name);
+    console.log("qwe");
+    console.log(req.getParameter("name"));
+    console.log("qwe");
+    res.send("dsds")
 });
 // conntoDB.connect();
 module.exports = router;

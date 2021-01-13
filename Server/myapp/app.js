@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var shopRouter = require('./routes/shop');
 // var mainRouter = require('./routes/main');
 var session = require('express-session');
 var app = express();
@@ -163,6 +164,7 @@ function websocket_add_listener(wsObj) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/be', shopRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

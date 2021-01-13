@@ -27,6 +27,21 @@ $(document).ready(function () {
         //     }, 5000);
         // }
     });
+    $('#shop').click(function () {
+        // $.post('/websocket', function (data, status) {
+        // $('#jump').on('click', function() {
+        // alert("te");     q
+
+        location.href = '/shop';
+        // })
+        // })
+        // if (websocketnum == 0) {
+        //     // web();
+        //     setInterval(() => {
+        //         web();
+        //     }, 5000);
+        // }
+    });
     $('#deluser').click(function () {
         $.post('/deluser', function (data, status) {
             console.log('sss');
@@ -46,14 +61,36 @@ $(document).ready(function () {
         });
     });
 
-    // $("#check").click(function(){
-    //     $.post(
-    //         '/check',
-    //         function (data, status) {
-
-    //             alert(data)
-
-    //         }
-    //     )
-    // })
+    $('.sen1').click(function () {
+        var data = 'sss';
+        $.post(
+            '/send',
+            {
+                // name:$(".sen").val(),
+                city: 'Duckburg',
+            },
+            function (data, status) {
+                // alert(data)
+            }
+        );
+    });
+    $('#gett').click(function () {
+        $.ajax({
+            url: '/gett',
+            type: 'GET',
+            async: true,
+            dataType: 'json',
+            data: {
+                name: '前台数据',
+                age: 12,
+            },
+            success: function (result) {
+                alert(123);
+                $('#mydiv').html(result.name);
+            },
+            error: function (xhr) {
+                alert('错误提示： ' + xhr.status + ' ' + xhr.statusText);
+            },
+        });
+    });
 });
