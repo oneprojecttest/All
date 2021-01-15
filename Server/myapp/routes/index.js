@@ -6,6 +6,8 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 var mysql = require('mysql');
+var app = express();
+// router.use(express.static(path.join(__dirname, '../public')))
 var pool = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
@@ -92,17 +94,40 @@ function sqlQuery(sqlstring, para, tag) {
 }
 
 router.get('/', function (req, res) {
-    // res.send("nih");
-    res.render('index');
+    // // res.send("nih");
+    // if (req.session.username == undefined) {
+    //     console.log('未登录');
+    //     res.render('login');
+    // } else {
+        res.render('index');
+    // }
 });
+// router.get('/admin', function (req, res) {
+//     // // res.send("nih");
+//     // if (req.session.username == undefined) {
+//         console.log('admin未登录');
+//     //     res.render('login');
+//     // } else {
+//         res.render('admin',{ data: 1, username: "qwre" });
+//     // }
+// });
 
 router.get('/login', function (req, res) {
+    console.log(__dirname)
     res.render('login');
 });
 //get main paper
 router.get('/main', function (req, res) {
     console.log('mian');
     res.render('ws');
+});
+router.get('/one', function (req, res) {
+    console.log('one');
+    res.render('page1');
+});
+router.get('/two', function (req, res) {
+    console.log('two');
+    res.render('page2');
 });
 router.post('/main', function (req, res) {
     console.log('mian');
@@ -161,11 +186,9 @@ router.post('/register', function (req, res) {
     // db.close();
 });
 
-
-
-
 //表单提交，注册信息
 router.post('/login', function (req, res) {
+    console.log(__dirname)
     var username = req.body.username;
     var pwd = req.body.password;
     var sql = 'SELECT * FROM test.username_tab where username=?';
@@ -191,6 +214,8 @@ router.post('/login', function (req, res) {
                     .then(function onFulfilled(data) {
                         if (data != 'NULL') {
                             console.log('to main');
+                            req.session.username = username;
+                            // req.session.usergrade = result[0].usergrade;
                             res.render('main');
                         } else {
                             res.render('password_error');
@@ -207,14 +232,13 @@ router.post('/login', function (req, res) {
         });
 });
 
-
 //跳转到购物界面
-router.use('/shop', shopRouter)
+router.use('/shop', shopRouter);
 
-// router.get('/shop', function (req, res) {
-//     console.log('shop');
-//     res.render(shopRouter);
-// });
+router.get('/shp', function (req, res) {
+    console.log('shp');
+    res.render('main');
+});
 //get main paper
 router.get('/register2', function (req, res) {
     console.log('register2');
@@ -224,15 +248,14 @@ router.post('/send', function (req, res) {
     console.log(req.body.name);
     console.log(req.body.city);
     console.log(req.body);
-    
     // res.send("dsds")
 });
 router.get('/gett', function (req, res) {
     // console.log(req.body.name);
-    console.log("qwe");
-    console.log(req.getParameter("name"));
-    console.log("qwe");
-    res.send("dsds")
+    console.log('qwe');
+    console.log(req.getParameter('name'));
+    console.log('qwe');
+    res.send('dsds');
 });
 // conntoDB.connect();
 module.exports = router;

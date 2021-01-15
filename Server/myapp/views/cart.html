@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head lang="en">
-        <meta charset="utf-8" />
-        <title>cart</title>
+    <head>
+        <meta charset="UTF-8" />
+        <title>详情页</title>
         <link rel="stylesheet" type="text/css" href="../css/public.css" />
         <link rel="stylesheet" type="text/css" href="../css/proList.css" />
+        <script>
+            var data = '<%= JSON.stringify(data) %>';
+            var usename = '<%= JSON.stringify(username) %>';
+            // alert('<%= (data) %>');
+        </script>
     </head>
     <body>
         <div class="toptitle">
@@ -12,7 +17,7 @@
                 <p>
                     <span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
                         <b>用户</b>
-                        <span>username</span>
+                        <span><%= (username) %></span>
                         <b>已登录，欢迎！</b>
                     </span>
                 </p>

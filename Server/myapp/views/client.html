@@ -4,30 +4,49 @@
 	<head lang="en">
 		<meta charset="utf-8" />
 		<title>挑选被装</title>
+		<script>
+            var data = '<%= JSON.stringify(data) %>';
+            var username = '<%= JSON.stringify(username) %>';
+            // alert('<%= (data) %>');
+        </script>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/proList.css"/>
 	</head>
-	
-	<div class = "toptitle">
-		<div class = "username">	
-		<p>
-		<span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
-		<b>用户</b><span>username ></span><b>已登录，欢迎！</b>	
-		</span></p>	
-		</div>
-	
-		<div>
-		<p align="center">
-		<span style="font-size: 70pt; color: rgba(0, 128, 0, 1); line-height: 300%; font-family: 华文行楷">
-		<b>被装精确申领平台</b>
-		</span></p></div>
+	<!-- <script type="text/javascript" src="../javascripts/fun_test.js"></script> -->
+	<body>
+        <div class="toptitle">
+            <div class="username">
+                <p>
+                    <span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
+         				<b>用户</b>
+                        <span><%= (username) %></span>
+                        <b>已登录，欢迎！</b>
+                    </span>
+                </p>
+            </div>
+
+            <div>
+                <p align="center">
+                    <span
+                        style="
+                            font-size: 70pt;
+                            color: rgba(0, 128, 0, 1);
+                            line-height: 300%;
+                            font-family: 华文行楷;
+                        "
+                    >
+                        <b>被装精确申领平台</b>
+                    </span>
+                </p>
+            </div>
+        </div>
 		
 	</div>
 
 		<ul class="proList wrapper clearfix">
 			
 			<li>
-				<a href="beinang.html">
+				<a href="shop/beinang">
 					<dl>
 						<dt><img src="../image/背囊.jpg"></dt>
 						<dd>背囊</dd>   <!--id = 1-->
@@ -37,7 +56,7 @@
 			</li>
 			
 			<li>
-				<a href="beizi.html">
+				<a href="shop/beizi">
 					<dl>
 						<dt><img src="../image/被子.jpg"></dt>
 						<dd>被子</dd>   <!--id = 2-->
@@ -47,7 +66,7 @@
 			</li>
 			
 			<li>
-				<a href="maojin.html">
+				<a href="shop/maojin">
 					<dl>
 						<dt><img src="../image/毛巾.jpg"></dt>
 						<dd>毛巾</dd>   <!--id = 3-->
@@ -57,7 +76,7 @@
 			</li>
 			
 			<li>
-				<a href="yuyi.html">
+				<a href="shop/yuyi">
 					<dl>
 						<dt><img src="../image/雨衣.jpg"></dt>
 						<dd>雨衣</dd>   <!--id = 4-->
@@ -67,7 +86,7 @@
 			</li>
 			
 			<li>
-				<a href="waiyaodai.html">
+				<a href="shop/waiyaodai">
 					<dl>
 					<dt><img src="../image/外腰带.jpg"></dt>
 					<dd>外腰带</dd>   <!--id = 5-->
@@ -77,7 +96,7 @@
 			</li>
 			
 			<li>
-				<a href="zuozhanxue.html">
+				<a href="shop/zuozhanxue">
 					<dl>
 					<dt><img src="../image/作战靴.jpg"></dt>
 					<dd>作战靴</dd>   <!--id = 6-->
@@ -87,7 +106,7 @@
 			</li>
 			
 			<li>
-				<a href="zhentou.html">
+				<a href="shop/zhentou">
 					<dl>
 						<dt><img src="../image/枕头.jpg"></dt>
 						<dd>枕头</dd>   <!--id = 7-->
@@ -97,7 +116,7 @@
 			</li>
 			
 			<li>
-				<a href="tinengfu.html">
+				<a href="shop/tinengfu">
 					<dl>
 						<dt><img src="../image/体能服.jpg"></dt>
 						<dd>体能服</dd>   <!--id = 8-->
@@ -107,7 +126,7 @@
 			</li>
 			
 			<li>
-				<a href="paoxie.html">
+				<a href="shop/paoxie">
 					<dl>
 						<dt><img src="../image/跑鞋.jpg"></dt>
 						<dd>跑鞋</dd>   <!--id = 9-->
@@ -117,7 +136,7 @@
 			</li>
 			
 			<li>
-				<a href="micaidayi.html">
+				<a href="shop/micaidayi">
 					<dl>
 						<dt><img src="../image/迷彩大衣.jpg"></dt>
 						<dd>迷彩大衣</dd>   <!--id = 10-->
@@ -127,7 +146,7 @@
 			</li>
 			
 			<li>
-				<a href="micaifu.html">
+				<a href="shop/micaifu">
 					<dl>
 						<dt><img src="../image/迷彩服.jpg"></dt>
 						<dd>迷彩服</dd>   <!--id = 11-->
@@ -141,7 +160,7 @@
 
 
 		<div class="gotop">
-			<a href="cart.html">
+			<a href="shop/cart">
 			<dl class="goCart">
 				<dt><img src="../img_temp/gt1.png"/></dt>
 				<span>1</span>
@@ -149,10 +168,5 @@
 			</a>			
 		</div>
 
-		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/nav.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/pro.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/cart.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
