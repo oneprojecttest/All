@@ -131,7 +131,7 @@ class TableWidgetContextMenu8_1(QWidget):
         self.tableView = QtWidgets.QTableView(self)
         self.tableView.setGeometry(QtCore.QRect(0, -10, 881, 461))
         self.tableView.setStyleSheet("QTableView {\n"
-            "border-image:url(/new/table.jpg);\n"
+            "border-image:url(new/table.jpg);\n"
             "}")
         self.tableView.horizontalHeader().setStyleSheet("QHeaderView::section {"
                                                        "color: black;padding-left: 4px;border: 1px solid #6c6c6c;}")

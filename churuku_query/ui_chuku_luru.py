@@ -259,7 +259,7 @@ class Ui_MainWindow5_2(object):
         firstdata_str2 = []
         for i in firstdata2:
             firstdata_str2.append(i[0])
-            print("hello")
+        #     print("hello")
         self.comboBox3.addItems(firstdata_str2)
         self.comboBox3.activated.connect(self.selectionchange3)
 
