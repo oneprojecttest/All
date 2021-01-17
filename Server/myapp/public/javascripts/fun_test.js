@@ -1,5 +1,8 @@
 var xyy = 99;
+
+
 $(document).ready(function () {
+   
     $('#rer').click(function () {
         // $.post('/websocket', function (data, status) {
         console.log('web');

@@ -184,5 +184,6 @@ app.use(function(err, req, res, next) {
 console.log("dsds")
 var xyy = 0;
 // var server = app.listen(3000, "127.0.0.1");
-module.exports = app;
 console.log("dsds")
+// var server = http.createServer(app).listen(3000, "192.168.159.1");
+module.exports = app;

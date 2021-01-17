@@ -4,7 +4,9 @@
         <meta charset="UTF-8" />
         <title>详情页</title>
         <link rel="stylesheet" type="text/css" href="../css/public.css" />
-        <link rel="stylesheet" type="text/css" href="../css/proList.css" />
+        <script type="text/javascript" src="javascripts/jquery.js"></script>
+        <script type="text/javascript" src="../javascripts/fun_cart.js"></script>
+
         <script>
             var data = '<%= JSON.stringify(data) %>';
             var usename = '<%= JSON.stringify(username) %>';
@@ -57,10 +59,41 @@
                             </p>
                             <!--应该有一个数据库操作的function-->
                         </div>
-                        <div class="btns clearfix">
-                            <a href="cart.html"><p class="buy fl">加入购物车</p></a>
-                            <!--应该有一个数据库操作的function-->
+                        <div
+                        class="choose-amount"
+                        clstag="shangpin|keycount|product|goumaishuliang_2"
+                    >
+                        <div class="wrap-input">
+                            <input
+                                class="text buy-num"
+                                onkeyup="setAmount.modify('#buy-num');"
+                                id="buy-num"
+                                value="1"
+                                data-max="200"
+                            />
+                            <a
+                                class="btn-reduce"
+                                onclick="setAmount.reduce('#buy-num')"
+                                href="#none"
+                                data-disabled="1"
+                            >
+                                -
+                            </a>
+                            <a
+                                class="btn-add"
+                                onclick="setAmount.add('#buy-num')"
+                                href="#none"
+                                data-disabled="1"
+                            >
+                                +
+                            </a>
                         </div>
+                    </div>
+                        <span id="item" style="display: none"><%=(item) %></span>
+                        <div class="btns clearfix", height="1000px">
+                            <button href="cart" type="button" id="cartclick">
+                                <p class="buy fl">加入购物车</p>
+                            </button>
                     </div>
                 </div>
             </div>
