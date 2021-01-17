@@ -15,7 +15,7 @@
                 <p>
                     <span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
                         <b>用户</b>
-
+                        <span><%=data.username%></span>
                         <b>已登录，欢迎！</b>
                     </span>
                 </p>
@@ -409,12 +409,12 @@
                     <p class="fr">
                         <span>
                             共
-                            <small id="sl"><%=data.numAll%></small>
+                            <small id="sl">0</small>
                             件商品
                         </span>
                         <span>
                             合计:&nbsp;
-                            <small id="all">￥<%=data.priceAll%></small>
+                            <small id="all">￥0.00</small>
                         </span>
                         <button id="finish" class="count">结算</button>
                         <!--应该有一个数据库操作的function-->

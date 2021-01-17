@@ -193,7 +193,7 @@ function getReturnPage(req, res) {
     sqlNumItems(req, res, arrayObj, tag, sql, req.route.path.substr(1));
 }
 router.post('/item', function (req, res) {
-    console.log(req.body);
+    console.log("weewr");
     var sql = 'SELECT * FROM churuku.cart where username=?';
     var arrayObj = new Array();
     var name = req.session.username;
@@ -239,6 +239,7 @@ router.post('/item', function (req, res) {
                     .sqlQuery(esql, arrayItem, tag)
                     .then(function onFulfilled(data) {
                         // console.log('qwe');
+                        res.send("ok");
                         if (data != 'NULL') {
                             console.log(data);
                         } else {
@@ -259,7 +260,7 @@ router.post('/item', function (req, res) {
         });
     console.log('qwe');
     console.log('qwe');
-    res.send('dsds');
+    
 });
 router.get('/beinang', function (req, res) {
     // console.log('beinang');
@@ -562,7 +563,7 @@ router.get('/cart', function (req, res) {
 
                 d.numAll = numAll;
                 d.priceAll = PriceAll.toFixed(2);
-
+                d.username = req.session.username;
                 console.log(d.result);
                 // var nums = new Array(12);
                 res.render('cart', { data: d });
@@ -576,75 +577,7 @@ router.get('/cart', function (req, res) {
     // }
 });
 
-router.post('/item', function (req, res) {
-    console.log(req.body);
-    var sql = 'SELECT * FROM churuku.cart where username=?';
-    var arrayObj = new Array();
-    var name = req.session.username;
-    // if (name == undefined) {
-    //     name = '123';
-    //     console.log(sdsdsd);
-    // }
-    arrayObj[0] = name;
-    var tag = sql_q.Sql_op.select;
-    sql_q
-        .sqlQuery(sql, arrayObj, tag)
-        .then(function onFulfilled(data) {
-            // console.log('qwe');
-            var arrayItem = new Array();
-            if (data != 'NULL') {
-                var num_i = 0;
-                var t = req.body.item;
-                var num = req.body.num;
-                for (var p in data) {
-                    console.log('ss', data[p]);
-                    for (var key in data[p]) {
-                        if (num_i == 0) {
-                            console.log(0);
-                        }
-                        if (key == t) {
-                            arrayItem[num_i - 1] = data[p][key] + parseInt(num);
-                            num_i++;
-                        } else {
-                            arrayItem[num_i - 1] = data[p][key];
-                            num_i++;
-                        }
-                    }
-                }
-                arrayItem[num_i - 1] = name;
-                for (var i = 0; i < arrayItem.length; i++) {
-                    console.log(i, arrayItem[i]);
-                }
 
-                tag = sql_q.Sql_op.update;
-                var esql =
-                    'update churuku.cart  set beinang = ?, micaifu = ?, paoxie = ?, beizi = ?,maojin = ?,micaidayi = ? ,shoutao = ?,tinengfu = ?,waiyaodai = ?,zhentou = ?,zuozhanxue = ?,yuyi = ? where  username = ?';
-                sql_q
-                    .sqlQuery(esql, arrayItem, tag)
-                    .then(function onFulfilled(data) {
-                        // console.log('qwe');
-                        if (data != 'NULL') {
-                            console.log(data);
-                        } else {
-                            console.log('背囊查询失败');
-                            // console.log('dddddd', data);
-                        }
-                    })
-                    .catch(function onRejected(error) {
-                        console.error(error);
-                    });
-            } else {
-                console.log('背囊查询失败');
-                // console.log('dddddd', data);
-            }
-        })
-        .catch(function onRejected(error) {
-            console.error(error);
-        });
-    console.log('qwe');
-    console.log('qwe');
-    res.send('dsds');
-});
 
 router.post('/changeitem', function (req, res) {
     console.log('change', req.body);
@@ -826,7 +759,7 @@ router.post('/finish', function (req, res) {
         }
         arrayCart[12] = req.session.username;
         var sqlCart =
-            'update cart set beinang = beinang - ? , micaifu = micaifu - ? , paoxie = paoxie - ? , beizi = beizi - ? , maojin = maojin - ? , micaidayi = micaidayi - ? , shoutao = shoutao - ? , tinengfu = tinengfu - ? , waiyaodai = waiyaodai - ? , zhentou = zhentou - ? , zuozhanxue = zuozhanxue - ? , yuyi = yuyi +? where username = ?';
+            'update cart set beinang = beinang - ? , micaifu = micaifu - ? , paoxie = paoxie - ? , beizi = beizi - ? , maojin = maojin - ? , micaidayi = micaidayi - ? , shoutao = shoutao - ? , tinengfu = tinengfu - ? , waiyaodai = waiyaodai - ? , zhentou = zhentou - ? , zuozhanxue = zuozhanxue - ? , yuyi = yuyi - ? where username = ?';
         var tag = sql_q.Sql_op.update;
         sql_q
             .sqlQuery(sqlCart, arrayCart, tag)

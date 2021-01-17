@@ -212,19 +212,24 @@ $(function () {
         });
         d.getItem = arrayObj;
         // d.getNum = arrayNum;
-        $.post(
-            '../shop/finish',
-            {
-                item: JSON.stringify(d),
-                // num: num,
-            },
-            function (data, status) {
-                // location.href = '../shop/cart';
-                console.log('Data: ' + data + '\nStatus: ' + status);
-                location.href = '../shop/finish';
-                
-            }
-        );
+        if(num == 0) {
+            console.log("buneg ")
+        }else{
+            $.post(
+                '../shop/finish',
+                {
+                    item: JSON.stringify(d),
+                    // num: num,
+                },
+                function (data, status) {
+                    // location.href = '../shop/cart';
+                    console.log('Data: ' + data + '\nStatus: ' + status);
+                    location.href = '../shop/finish';
+                    
+                }
+            );
+        }
+        
         // }
     });
 });
