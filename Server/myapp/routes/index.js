@@ -99,8 +99,9 @@ router.get('/', function (req, res) {
         console.log('未登录');
         res.render('login');
     } else {
-        console.log('登录');
-        res.render('shop');
+        var uname = req.session.username;
+        console.log('"shoip"登录',req.session.username);
+        res.redirect('shop');
     }
 });
 // router.get('/admin', function (req, res) {
@@ -146,11 +147,11 @@ router.post('/register', function (req, res) {
     var username = req.body.username;
     var pwd = req.body.password;
     var pwd2 = req.body.password2;
-    var sql = 'SELECT * FROM churuku.denglu where yonghuming=? and mima=?';
+    var sql = 'SELECT * FROM churuku.denglu where yonghuming=? ';
     console.log(sql);
     var arrayObj = new Array();
     arrayObj[0] = username;
-    arrayObj[1] = crypto.createHash('md5').update(pwd).digest('hex');
+    
     // console.log(sql);
     console.log(username);
     var data;
@@ -166,6 +167,8 @@ router.post('/register', function (req, res) {
                 res.render('register_error');
             } else {
                 console.log('注册信息');
+                arrayObj[1] = crypto.createHash('md5').update(pwd).digest('hex');
+                
                 sql = 'insert into churuku.denglu (yonghuming,mima) values (?,?)';
                 tag = Sql_op.insert;
                 sqlQuery(sql, arrayObj, tag)
@@ -216,7 +219,7 @@ router.post('/login', function (req, res) {
         .then(function onFulfilled(data) {
             if (data == 'NULL') {
                 console.log('户不存');
-                res.render('/no_username');
+                res.render('no_username');
             } else {
                 //判断密码
                 console.log(data);
@@ -257,6 +260,17 @@ router.get('/cart', function (req, res) {
     console.log('shp');
     res.render('cart', { data: 1, username: req.session.username });
 });
+router.post("/loadUserPoint",function(req,res){
+    console.log("receive data!")
+    //若Android上传参数为空，则data为空，若不为空，则data为上传参数的json对象。
+    var data = req.body;
+    console.log(data);
+    //返回值一般是对数据库进行一些列操作后再发送出去的
+
+    //发送JsonArray
+    res.send([{power:"True"},{name:"背囊",price:24,count:33},{name:"被子",price:20,count:26},{name:"雨衣",price:25,count:77},{name:"雨衣包",price:4,count:3}])
+});
+
 //get main paper
 router.get('/register2', function (req, res) {
     console.log('register2');

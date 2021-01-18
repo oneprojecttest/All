@@ -85,7 +85,15 @@
             ) {
                 alert('用户名不能为空');
                 return false;
+            } 
+            if (
+                document.getElementById('password').value == null ||
+                document.getElementById('password').value == ''
+            ) {
+                alert('密碼不能为空');
+                return false;
             } else {
+                // alert('d')
                 return true;
             }
         }

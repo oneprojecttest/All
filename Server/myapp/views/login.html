@@ -31,6 +31,7 @@
             <div style="margin-top: 10px">
                 <input
                     class="inputs"
+                    id="password"
                     style="border-radius: 100px"
                     type="password"
                     placeholder="请输入密码"
@@ -63,6 +64,15 @@
             if (
                 document.getElementById('name').value == null ||
                 document.getElementById('name').value == ''
+            ) {
+                alert('用户名不能为空');
+                return false;
+            } else {
+                return true;
+            }
+            if (
+                document.getElementById('password').value == null ||
+                document.getElementById('password').value == ''
             ) {
                 alert('用户名不能为空');
                 return false;

@@ -15,6 +15,22 @@ $(document).ready(function () {
             }
         );
     });
+    $('.logout').click(function () {
+        // alert('123');
+        var item = $('#item').html();
+        var num = $('#buy-num').val();
+        $.post(
+            '/shop/logout',
+            {
+                item: item,
+                num: num,
+            },
+            function (data, status) {
+                location.href = '../shop/cart';
+                // alert('Data: ' + data + '\nStatus: ' + status);
+            }
+        );
+    });
     $('#finish').click(function () {
         // alert('123');
         var item = $('#item').html();

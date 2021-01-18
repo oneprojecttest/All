@@ -43,7 +43,9 @@ app.set('view engine', 'html');
 
 // session
 app.use(cookieParser())
+var identityKey = 'skey';
 app.use(session({
+  name: identityKey,
   secret: 'dev',
   resave: false,
   saveUninitialized: true,
@@ -161,6 +163,14 @@ function websocket_add_listener(wsObj) {
 //   res.render('index.html');
   
 // });
+app.post('/shop/logout', function (req, res) {
+  req.session.username = null; // 删除session
+  
+  res.clearCookie(identityKey);
+  console.log('登出');
+  res.render('login');
+  // res.sned('ok');
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);

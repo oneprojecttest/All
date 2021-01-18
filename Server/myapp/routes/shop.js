@@ -60,14 +60,24 @@ router.get('/', function (req, res) {
     }
 });
 router.post('/login', function (req, res) {
-    // if (req.session.username == undefined) {
-    //     console.log('未登录');
-    //     res.render('login');
-    // } else {
-    console.log('client');
-    // res.render('main');
-    res.render('client', { data: 1, username: req.session.username });
-    // }
+    if (req.session.username == undefined) {
+        console.log('未登录');
+        res.render('login');
+    } else {
+        console.log('client');
+        // res.render('main');
+        res.redirect('../shop');
+    }
+});
+router.get('/login', function (req, res) {
+    if (req.session.username == undefined) {
+        console.log('未登录');
+        res.render('login');
+    } else {
+        console.log('client');
+        // res.render('main');
+        res.redirect('../shop');
+    }
 });
 function getNum(username) {
     return new Promise((resolve, reject) => {
@@ -193,7 +203,7 @@ function getReturnPage(req, res) {
     sqlNumItems(req, res, arrayObj, tag, sql, req.route.path.substr(1));
 }
 router.post('/item', function (req, res) {
-    console.log("weewr");
+    console.log('weewr');
     var sql = 'SELECT * FROM churuku.cart where username=?';
     var arrayObj = new Array();
     var name = req.session.username;
@@ -239,7 +249,7 @@ router.post('/item', function (req, res) {
                     .sqlQuery(esql, arrayItem, tag)
                     .then(function onFulfilled(data) {
                         // console.log('qwe');
-                        res.send("ok");
+                        res.send('ok');
                         if (data != 'NULL') {
                             console.log(data);
                         } else {
@@ -260,7 +270,6 @@ router.post('/item', function (req, res) {
         });
     console.log('qwe');
     console.log('qwe');
-    
 });
 router.get('/beinang', function (req, res) {
     // console.log('beinang');
@@ -577,8 +586,6 @@ router.get('/cart', function (req, res) {
     // }
 });
 
-
-
 router.post('/changeitem', function (req, res) {
     console.log('change', req.body);
     var sql = 'SELECT * FROM churuku.cart where username=?';
@@ -776,7 +783,7 @@ router.post('/finish', function (req, res) {
                 console.error(error);
             });
     }
-    res.send("ok")
+    res.send('ok');
 });
 router.get('/finish', function (req, res) {
     console.log('get finish');
