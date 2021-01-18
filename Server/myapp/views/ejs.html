@@ -1,0 +1,24 @@
+//->这个是制定的模板
+<script charset="UTF-8" type="text/javascript" src="javascripts/ejs.min.js"></script>
+<script type="text/javascript" src="javascripts/fun_test.js"></script>
+
+<div class="menu"></div>
+<script charset="UTF-8" type="text/template" id="menuTemplate">
+    <%if(data && data.length>0){%>
+    <ul>
+        <%data.forEach(function(curData,index){%>
+        <%var cName=index===0?'bg':null;%>
+        <li class="<%=cName%>">
+            <a href="#<%=curData.tag%>" columnId="<%=curData.columnId%>">
+            <%=curData.name%>
+            <i class="triangle">
+                <span class="triLeft"></span>
+                <span class="triRight"></span>
+                console.log( <%=curData.name%>)
+            </i>
+            </a>
+        </li>
+        <%});%>
+    </ul>
+    <%}%>
+</script>

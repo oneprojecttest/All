@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>登录界面</title>
 <body background="images/jun5.jpg" style="background-size: 100%; background-repeat: no-repeat" ;>
-    <link rel="stylesheet" type="text/css" href="stylesheet/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style_cly.css" />
     <p align="center">
         <span
             style="
@@ -15,7 +15,7 @@
         </span>
     </p>
 
-    <form action="http://127.0.0.1:3000/login" method="post" onsubmit="return check()">
+    <form action="/login" method="post" onsubmit="return check()">
         <div style="text-align: center; margin-top: 90px">
             <div>
                 <input
@@ -31,6 +31,7 @@
             <div style="margin-top: 10px">
                 <input
                     class="inputs"
+                    id="password"
                     style="border-radius: 100px"
                     type="password"
                     placeholder="请输入密码"
@@ -52,7 +53,7 @@
                     "
                 >
                     你还没有账号？点
-                    <a href="http://localhost:3000/register2">这里</a>
+                    <a href="/register2">这里</a>
                     去注册吧！
                 </span>
             </div>
@@ -63,6 +64,15 @@
             if (
                 document.getElementById('name').value == null ||
                 document.getElementById('name').value == ''
+            ) {
+                alert('用户名不能为空');
+                return false;
+            } else {
+                return true;
+            }
+            if (
+                document.getElementById('password').value == null ||
+                document.getElementById('password').value == ''
             ) {
                 alert('用户名不能为空');
                 return false;

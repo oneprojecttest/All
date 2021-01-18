@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var shopRouter = require('./routes/shop');
 // var mainRouter = require('./routes/main');
 var session = require('express-session');
 var app = express();
@@ -42,7 +43,9 @@ app.set('view engine', 'html');
 
 // session
 app.use(cookieParser())
+var identityKey = 'skey';
 app.use(session({
+  name: identityKey,
   secret: 'dev',
   resave: false,
   saveUninitialized: true,
@@ -160,9 +163,19 @@ function websocket_add_listener(wsObj) {
 //   res.render('index.html');
   
 // });
+app.post('/shop/logout', function (req, res) {
+  req.session.username = null; // 删除session
+  
+  res.clearCookie(identityKey);
+  console.log('登出');
+  res.render('login');
+  // res.sned('ok');
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/be', shopRouter);
+// app.get('/one', shopRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -181,5 +194,6 @@ app.use(function(err, req, res, next) {
 console.log("dsds")
 var xyy = 0;
 // var server = app.listen(3000, "127.0.0.1");
-module.exports = app;
 console.log("dsds")
+// var server = http.createServer(app).listen(3000, "192.168.159.1");
+module.exports = app;

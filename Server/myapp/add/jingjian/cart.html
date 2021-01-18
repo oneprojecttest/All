@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8" />
+		<title>cart</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/proList.css" />
+	</head>
+	<body>
+	<div class = "toptitle">
+		<div class = "username">	
+		<p>
+		<span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
+		<b>用户</b><span><%= username %></span><b>已登录，欢迎！</b>	
+		</span></p>	
+		</div>
+	
+		<div>
+		<p align="center">
+		<span style="font-size: 70pt; color: rgba(0, 128, 0, 1); line-height: 300%; font-family: 华文行楷">
+		<b>被装精确申领平台</b>
+		</span></p></div>
+		
+	</div>
+		
+		<div class="cart mt">
+			<div class="site">
+				<p class=" wrapper clearfix">
+					<span class="fl">购物车</span>
+					<a href="client.html" class="fr">继续购物&gt;</a>
+				</p>
+			</div>
+			<!-----------------table------------------->
+			<div class="table wrapper">
+				<div class="tr">
+					<div>商品</div>
+					<div>单价</div>
+					<div>数量</div>
+					<div>小计</div>
+					<div>操作</div>
+				</div>			
+				
+				<div class="th" id = "1">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/背囊.jpg"></dt>
+								<dd class="fl">
+									<p>背囊</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥17.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥17.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "2">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/被子.jpg"></dt>
+								<dd class="fl">
+									<p>被子</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥18.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥18.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				<div class="th" id = "3">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/毛巾.jpg"></dt>
+								<dd class="fl">
+									<p>毛巾</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥9.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥9.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "4">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/雨衣.jpg"></dt>
+								<dd class="fl">
+									<p>雨衣</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥20.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥20.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "5">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/外腰带.jpg"></dt>
+								<dd class="fl">
+									<p>外腰带</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥15.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥15.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "6">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/作战靴.jpg"></dt>
+								<dd class="fl">
+									<p>作战靴</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥22.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥22.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "7">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/枕头.jpg"></dt>
+								<dd class="fl">
+									<p>枕头</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥23.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥23.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "8">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/体能服.jpg"></dt>
+								<dd class="fl">
+									<p>体能服</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥17.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥17.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "9">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/跑鞋.jpg"></dt>
+								<dd class="fl">
+									<p>跑鞋</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥22.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥22.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "10">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/迷彩大衣.jpg"></dt>
+								<dd class="fl">
+									<p>迷彩大衣</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥30.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥30.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+				
+				
+				<div class="th" id = "11">
+					<div class="pro clearfix">
+						<label class="fl">
+							<input type="checkbox"/>
+    						<span></span>
+						</label>
+						<a class="fl" href="#">
+							<dl class="clearfix">
+								<dt class="fl"><img src="images/迷彩服.jpg"></dt>
+								<dd class="fl">
+									<p>迷彩服</p>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="price">￥25.90</div>
+					<div class="number">
+						<p class="num clearfix">
+							<img class="fl sub" src="img_temp/sub.jpg">
+							<span class="fl">1</span>
+							<img class="fl add" src="img_temp/add.jpg">
+						</p>
+					</div>
+					<div class="price sAll">￥25.90</div>
+					<div class="price"><a class="del" href="#2">删除</a></div>
+				</div>
+								
+
+				<div class="goOn">空空如也~<a href="zzz.html">去逛逛</a></div>
+				<div class="tr clearfix">
+					<p class="fr">
+						<span>共<small id="sl">0</small>件商品</span>
+						<span>合计:&nbsp;<small id="all">￥0.00</small></span>
+						<a href="order.html" class="count">结算</a>    <!--应该有一个数据库操作的function-->
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="mask"></div>
+		<div class="tipDel">
+			<p>确定要删除该商品吗？</p>
+			<p class="clearfix">
+				<a class="fl cer" href="#">确定</a>
+				<a class="fr cancel" href="#">取消</a>
+			</p>
+		</div>
+
+        <script>
+		
+		//document.getElementById("1").style.display="none"
+		
+		//document.getElementById("2").style.display="none"
+		
+		//document.getElementById("3").style.display="none"
+		
+		//document.getElementById("4").style.display="none"
+		
+		//document.getElementById("5").style.display="none"
+		
+		//document.getElementById("6").style.display="none"
+		
+		//document.getElementById("7").style.display="none"
+		
+		//document.getElementById("8").style.display="none"
+		
+		//document.getElementById("9").style.display="none"
+		
+		//document.getElementById("10").style.display="none"
+		
+		//document.getElementById("11").style.display="none"
+		
+		</script>
+		
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

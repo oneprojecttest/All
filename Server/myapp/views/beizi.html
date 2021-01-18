@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>详情页</title>
+        <link rel="stylesheet" type="text/css" href="../css/public.css" />
+        <link rel="stylesheet" type="text/css" href="../css/proList.css" />
+        <script type="text/javascript" src="javascripts/jquery.js"></script>
+        <script type="text/javascript" src="../javascripts/fun_cart.js"></script>
+
+        <script>
+            var setAmount = {
+                min: 1,
+                max: 999,
+                amount: function (b, c) {
+                    // alert('12');
+                    var a = document.getElementById('buy-num').value;
+                    // alert(a);
+
+                    if (c == true) {
+                        a = parseInt(a) + 1;
+                    } else {
+                        a = parseInt(a) - 1;
+                    }
+                    return a;
+                },
+                add: function (b) {
+                    // alert(b);
+                    var a = this.amount(b, true);
+                    // alert(a);
+                    if (a <= this.max) {
+                        document.getElementById('buy-num').value = a;
+                    } else {
+                    }
+                  
+                },
+                reduce: function (b) {
+                    var a = this.amount(b, false);
+                    if (a >= this.min) {
+                        document.getElementById('buy-num').value = a;
+                    } else {
+                       
+                    }
+                    
+                },
+                modify: function (b) {
+                    var a = document.getElementById('buy-num').value;
+                    if (a < this.min || a > this.max || !this.reg(a)) {
+                        alert('\u8bf7\u8f93\u5165\u6b63\u786e\u7684\u6570\u91cf\uff01');
+                        
+                    }
+                    
+                },
+            };
+        </script>
+        <script>
+            var data = '<%= JSON.stringify(data) %>';
+            var usename = '<%= JSON.stringify(username) %>';
+            // alert('<%= (data) %>');
+        </script>
+    </head>
+    <body>
+        <div class="toptitle">
+            <div class="username">
+                <p>
+                    <span style="font-size: 20pt; line-height: 50%; font-family: 华文行楷">
+                        <b>用户</b>
+                        <span><%= (username) %></span>
+                        <b>已登录，欢迎！</b>
+                    </span>
+                </p>
+            </div>
+
+            <div>
+                <p align="center">
+                    <span
+                        style="
+                            font-size: 70pt;
+                            color: rgba(0, 128, 0, 1);
+                            line-height: 300%;
+                            font-family: 华文行楷;
+                        "
+                    >
+                        <b>被装精确申领平台</b>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="detCon">
+            <div class="proDet wrapper">
+                <div class="proCon clearfix">
+                    <div class="proImg fl">
+                        <img class="det" src="../image/被子.jpg" />
+                    </div>
+                    <div class="fr intro">
+                        <div class="title">
+                            <h4>被子</h4>
+                            <span>￥18.90</span>
+                        </div>
+                        <div class="proIntro">
+                            <p>
+                                数量&nbsp;&nbsp;库存
+                                <span><%= (data) %></span>
+                                件
+                            </p>
+                            <!--应该有一个数据库操作的function-->
+                        </div>
+                        <div
+                        class="choose-amount"
+                        clstag="shangpin|keycount|product|goumaishuliang_2"
+                    >
+                        <div class="wrap-input">
+                            <input
+                                class="text buy-num"
+                                onkeyup="setAmount.modify('#buy-num');"
+                                id="buy-num"
+                                value="1"
+                                data-max="200"
+                            />
+                            <a
+                                class="btn-reduce"
+                                onclick="setAmount.reduce('#buy-num')"
+                                href="#none"
+                                data-disabled="1"
+                            >
+                                -
+                            </a>
+                            <a
+                                class="btn-add"
+                                onclick="setAmount.add('#buy-num')"
+                                href="#none"
+                                data-disabled="1"
+                            >
+                                +
+                            </a>
+                        </div>
+                    </div>
+                        <span id="item" style="display: none"><%=(item) %></span>
+                        <div class="btns clearfix", height="1000px">
+                            <button  type="button" id="cartclick">
+                                <p class="buy fl">加入购物车</p>
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
