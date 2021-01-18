@@ -103,7 +103,8 @@ class TableWidgetContextMenu3_1(QWidget):
         self.tableWidget.horizontalHeader().setStyleSheet("background-color:rgba(206,206,206,100);")
 
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
-
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        
         self.tableView = QtWidgets.QTableView(self)
         self.tableView.setGeometry(QtCore.QRect(0, -10, 881, 461))
         self.tableView.setStyleSheet("QTableView {\n"

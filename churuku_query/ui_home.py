@@ -11,11 +11,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QObject , pyqtSignal
 
 class Ui_MainWindow(object):
+        # print("12")
         def setupUi(self, MainWindow):
                 MainWindow.setObjectName("MainWindow")
                 MainWindow.resize(930, 703)
                 MainWindow.setStyleSheet("QWidget {\n"
-                        "border-image:url(./new/登录背景.jpg);\n"
+                        "border-image:url(new/登录背景.jpg);\n"
                         "}\n"
                         "\n"
                         "#下面的防止背景干扰其他控件\n"
