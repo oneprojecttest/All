@@ -9,7 +9,7 @@ var mysql = require('mysql');
 var app = express();
 // router.use(express.static(path.join(__dirname, '../public')))
 var pool = mysql.createPool({
-    host: '127.0.0.1',
+    host: '192.168.43.16',
     user: 'root',
     password: '12345',
     database: 'churuku',
@@ -100,7 +100,7 @@ router.get('/', function (req, res) {
         res.render('login');
     } else {
         var uname = req.session.username;
-        console.log('"shoip"登录',req.session.username);
+        console.log('"shoip"登录', req.session.username);
         res.redirect('shop');
     }
 });
@@ -151,7 +151,7 @@ router.post('/register', function (req, res) {
     console.log(sql);
     var arrayObj = new Array();
     arrayObj[0] = username;
-    
+
     // console.log(sql);
     console.log(username);
     var data;
@@ -168,7 +168,7 @@ router.post('/register', function (req, res) {
             } else {
                 console.log('注册信息');
                 arrayObj[1] = crypto.createHash('md5').update(pwd).digest('hex');
-                
+
                 sql = 'insert into churuku.denglu (yonghuming,mima) values (?,?)';
                 tag = Sql_op.insert;
                 sqlQuery(sql, arrayObj, tag)
@@ -260,15 +260,71 @@ router.get('/cart', function (req, res) {
     console.log('shp');
     res.render('cart', { data: 1, username: req.session.username });
 });
-router.post("/loadUserPoint",function(req,res){
-    console.log("receive data!")
+router.post('/loadUserPoint', function (req, res) {
+    console.log('receive data!');
     //若Android上传参数为空，则data为空，若不为空，则data为上传参数的json对象。
-    var data = req.body;
-    console.log(data);
-    //返回值一般是对数据库进行一些列操作后再发送出去的
+    // var data = req.body;
+    // console.log(data);
+    //返回值一般是对数据库进行一些列操作后再发送出去的、
+    console.log(1);
+    var sql = 'SELECT * FROM churuku.kucun';
+    console.log(1);
+    var arrayObj = new Array();
+    console.log(1);
+    // console.log(req.route.path.substr(1));
+    var tag = Sql_op.select;
+    console.log(1);
+    // arrayObj[0] = getPagetid(req.route.path.substr(1));
+    var arr = [
+        { power: 'True' },
+        { name: '背囊', price: 50.0, count: 0 },
+        { name: '迷彩服', price: 125.0, count: 0 },
+        { name: '迷彩跑鞋', price: 120.0, count: 0 },
+        { name: '被子', price: 40.0, count: 0 },
+        { name: '毛巾', price: 15.0, count: 0 },
+        { name: '迷彩大衣', price: 200.0, count: 0 },
+        { name: '手套', price: 55.0, count: 0 },
+        { name: '体能服', price: 65.0, count: 0 },
+        { name: '外腰带', price: 25.0, count: 0 },
+        { name: '枕头', price: 35.0, count: 0 },
+        { name: '作战靴', price: 150.0, count: 0 },
+        { name: '雨衣', price: 60.0, count: 0 },
+    ];
+    console.log(2);
+    // arrayObj[0] = 0;
 
+    // console.log(i);
+    // arrayObj[0]++;
+    sqlQuery(sql, arrayObj, tag)
+        .then(function onFulfilled(data) {
+            console.log('qwe');
+            if (data != 'NULL') {
+                for (var i = 0; i < data.length; i++) {
+                    console.log('dddddd', data);
+                    console.log(data[i].shuliang);
+
+                    var return_num = data[i].shuliang;
+                    if(data[i].cailiao_id<13){
+                        arr[data[i].cailiao_id].count = return_num;
+                        console.log(arr);
+                    }
+                    // console.log(arrayObj, arr[i].count);
+                    
+                       
+                }
+
+                res.send(arr);
+                // arr[i].count = return_num;
+                // console.log('dsd', item);
+            } else {
+                console.log('背囊查询失败');
+                // console.log('dddddd', data);
+            }
+        })
+        .catch(function onRejected(error) {
+            console.error(error);
+        });
     //发送JsonArray
-    res.send([{power:"True"},{name:"背囊",price:24,count:33},{name:"被子",price:20,count:26},{name:"雨衣",price:25,count:77},{name:"雨衣包",price:4,count:3}])
 });
 
 //get main paper
@@ -290,8 +346,7 @@ router.get('/gett', function (req, res) {
     res.send('dsds');
 });
 router.post('/changeitem', function (req, res) {
-
-    console.log("change",req.body);
+    console.log('change', req.body);
     var sql = 'SELECT * FROM churuku.cart where username=?';
     var arrayObj = new Array();
     var name = req.session.username;
@@ -362,8 +417,7 @@ router.post('/changeitem', function (req, res) {
 });
 // conntoDB.connect();
 router.post('/changeitem', function (req, res) {
-
-    console.log("change",req.body);
+    console.log('change', req.body);
     var sql = 'SELECT * FROM churuku.cart where username=?';
     var arrayObj = new Array();
     var name = req.session.username;
@@ -390,7 +444,7 @@ router.post('/changeitem', function (req, res) {
                             console.log(0);
                         }
                         if (num_i == t) {
-                            arrayItem[num_i - 1] =  parseInt(0);
+                            arrayItem[num_i - 1] = parseInt(0);
                             num_i++;
                         } else {
                             arrayItem[num_i - 1] = data[p][key];

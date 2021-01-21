@@ -19,10 +19,10 @@ app.use(express.static('node_modules'));
 //数据库连接
 var mysql = require('mysql');
 var conntoDB = mysql.createConnection({
-  host: '127.0.0.1',
+  host: '192.168.43.16',
   user: 'root',
   password: '12345',
-  database: 'test'
+  database: 'churuku'
 });
 conntoDB.connect();
 
