@@ -9,7 +9,7 @@ var mysql = require('mysql');
 var app = express();
 // router.use(express.static(path.join(__dirname, '../public')))
 var pool = mysql.createPool({
-    host: '127.0.0.1',
+    host: '192.168.43.16',
     user: 'root',
     password: '12345',
     database: 'churuku',
@@ -279,7 +279,7 @@ router.post('/loadUserPoint', function (req, res) {
         { power: 'True' },
         { name: '背囊', price: 50.0, count: 0 },
         { name: '迷彩服', price: 125.0, count: 0 },
-        { name: '跑鞋', price: 120.0, count: 0 },
+        { name: '迷彩跑鞋', price: 120.0, count: 0 },
         { name: '被子', price: 40.0, count: 0 },
         { name: '毛巾', price: 15.0, count: 0 },
         { name: '迷彩大衣', price: 200.0, count: 0 },
@@ -299,13 +299,17 @@ router.post('/loadUserPoint', function (req, res) {
         .then(function onFulfilled(data) {
             console.log('qwe');
             if (data != 'NULL') {
-                for (var i = 0; i < 12; i++) {
+                for (var i = 0; i < data.length; i++) {
                     console.log('dddddd', data);
                     console.log(data[i].shuliang);
+
                     var return_num = data[i].shuliang;
+                    if(data[i].cailiao_id<13){
+                        arr[data[i].cailiao_id].count = return_num;
+                        console.log(arr);
+                    }
                     // console.log(arrayObj, arr[i].count);
-                    arr[i+1].count = return_num;
-                    console.log(arr);
+                    
                        
                 }
 

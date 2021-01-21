@@ -185,7 +185,7 @@ $(function () {
         });
     });
     $('.cancel').click(function () {
-        alert('取消');
+        // alert('取消');
         $('.mask').hide();
         $('.tipDel').hide();
     });
