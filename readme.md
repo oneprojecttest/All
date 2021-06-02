@@ -39,11 +39,11 @@
 [startUML下载](https://staruml.io/download)  
 [startUml使用](https://blog.csdn.net/csdn_20150804/article/details/105004375?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf)  
 **分工**
-   * 第一章 陈一凡
-   * 第二章 陈志强
-   * 第三章 韩建臣
-   * 第四章 曹立源
-   * 汇总 &emsp;许云洋
+   * 第一章 cyf
+   * 第二章 czq
+   * 第三章 hjc
+   * 第四章 cly
+   * 汇总 &emsp;xyy
 
 ## 作业2：[软件需求规格说明文档](https://www.trustie.net/student_work?homework=12117#student_work_660108)
 
